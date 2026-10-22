@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>blog.noirebox.eu — AI agents, security &amp; proof | Sam Labbe</title>
+<meta name="description" content="Journal de bord — le blog de Sam Labbe : agents IA, sécurité &amp; preuve. EN d'abord, FR au fil des traductions.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0b0d'/%3E%3Crect x='20' y='20' width='24' height='24' rx='4' fill='%237de8a9'/%3E%3C/svg%3E">
+<link href="css/style.css" rel="stylesheet">
+<style>
+.hero{display:grid;grid-template-columns:3fr 1fr;gap:16px;margin-top:34px}
+.feat,.fil{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.feat img{width:100%;aspect-ratio:21/9;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
+.feat .fbody{padding:20px 22px 24px}
+.feat h2{font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:500;line-height:1.2;margin:10px 0 12px}
+.feat h2 a:hover{color:var(--accent)}
+.feat .pres{color:var(--dim);font-size:.95rem;margin-bottom:16px}
+.readmore{font-family:var(--mono);font-size:.8rem;color:var(--accent)}
+.filh{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:14px 16px;border-bottom:1px solid var(--line)}
+.filrow{display:flex;gap:14px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}
+.filrow:last-child{border-bottom:none}
+.rthumb{width:68px;height:68px;border-radius:10px;object-fit:cover;flex:none;border:1px solid var(--line)}
+.rthumb.brandmark{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0b0d'/%3E%3Crect x='20' y='20' width='24' height='24' rx='4' fill='%237de8a9'/%3E%3C/svg%3E") center/cover;border-color:var(--line)}
+.filrow .fd{margin:0}
+.filrow>div{min-width:0}
+.filrow .fd{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.filrow a{display:-webkit-box;font-size:.92rem;font-weight:500;margin:4px 0;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.filrow a:hover{color:var(--accent)}
+.tbar{display:flex;gap:8px;flex-wrap:wrap;margin:38px 0 0}
+.tbar a{font-family:var(--mono);font-size:.74rem;color:var(--dim);border:1px solid var(--line);padding:7px 14px;border-radius:999px;transition:color .15s,border-color .15s}
+.tbar a:hover{color:var(--accent);border-color:var(--accent)}
+.tsec{margin-top:54px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:22px}
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
+.pcard:hover{border-color:#3a3f46;transform:translateY(-2px)}
+.pcard img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
+.pcard .pbody{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pcard .pd{font-family:var(--mono);font-size:.68rem;color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pcard h3{font-size:1rem;font-weight:500;line-height:1.3}
+.pcard h3 a:hover{color:var(--accent)}
+.pcard .pr{color:var(--dim);font-size:.86rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pcard .pt{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.ctaband{margin-top:64px;border:1px solid var(--accent);border-radius:16px;padding:28px;background:linear-gradient(120deg,rgba(125,232,169,.07),transparent 70%);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.ctaband b{font-weight:500;font-size:1.1rem}
+.ctaband p{color:var(--dim);font-size:.9rem;margin-top:4px}
+.ctaband .cb{display:flex;gap:12px;flex-wrap:wrap}
+.cb a{font-family:var(--mono);font-size:.8rem;padding:10px 18px;border-radius:999px;border:1px solid var(--line);color:var(--dim);transition:.15s}
+.cb a:hover{color:var(--accent);border-color:var(--accent)}
+.cb a.hot{background:var(--accent);border-color:var(--accent);color:#08110c}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.sico{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);color:var(--dim);display:inline-flex;align-items:center;justify-content:center;transition:color .15s,border-color .15s}
+.sico:hover{color:var(--accent);border-color:var(--accent)}
+.sico svg{fill:currentColor}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Journal de bord">
+<meta property="og:title" content="Journal de bord — agents IA, sécurité &amp; preuve">
+<meta property="og:description" content="Le blog de Sam Labbe : agents IA en production, sécurité offensive, preuve de conformité.">
+<meta property="og:url" content="https://blog.noirebox.eu/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Journal de bord — agents IA, sécurité &amp; preuve">
+<meta name="twitter:description" content="Le blog de Sam Labbe : agents IA, sécurité, preuve.">
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html" style="color:var(--accent)">blog.noirebox.eu</a><span style="font-family:var(--mono);font-size:.7rem;color:var(--muted)">blog.noirebox.eu</span>
+    <div class="barright">
+      <a class="pill" href="https://code.noirebox.eu">← docs</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" style="padding-top:40px">
+  <p class="kicker">// ai agents · security · proof</p>
+  <h1 data-fr="The logbook.">The logbook.</h1>
+  <p class="sub" id="sub">What we build, break and measure — published here, verifiable. Adding a post = drop a <code>.md</code> and one line in <code>INDEX.md</code>.</p>
+
+  <div class="hero" id="hero" style="display:none"></div>
+  <div class="tbar" id="tbar" style="display:none"></div>
+  <section class="tsec" id="dernieres">
+    <p class="kicker" data-en="// latest posts">// dernières publications</p>
+    <div class="cards" id="dernCards"></div>
+  </section>
+  <div id="tsections"></div>
+
+  <div class="ctaband">
+    <div>
+      <b>This blog is part of NoireBox — the project that proves what it does.</b>
+      <p data-en="Sealed pages, a hash-chained feed, and a public benchmark. RSS if you prefer machines.">Sealed pages, a hash-chained feed, and a public benchmark. RSS if you prefer machines.</p>
+    </div>
+    <div class="cb">
+      <a class="hot" href="https://code.noirebox.eu" data-en="the docs →">the docs →</a>
+      <a href="rss.xml">RSS</a>
+        <a class="sico" href="https://x.com/slabbbbbbbbbbbb" aria-label="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a class="sico" href="https://bsky.app/profile/slabbdev.bsky.social" aria-label="Bluesky" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.416-.056-.136.022-.276.04-.416.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 0-.415-.056c.14-.017.276-.04.415-.056 2.67-.297 5.568-1.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg></a><a class="sico wide" href="https://dev-null.sh/@slabbdev" aria-label="dev-null" target="_blank" rel="noopener" style="width:auto;padding:0 12px;font-family:var(--mono);font-size:.64rem">/dev/null</a><a class="sico" href="https://dev.to/slabb" aria-label="dev.to" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M0 0v24h24V0H0zm7.29 15.48c-.61.44-1.42.65-2.43.65-.98 0-1.81-.23-2.48-.68v-1.7c.66.5 1.45.75 2.36.75.47 0 .83-.08 1.07-.25.24-.17.36-.37.36-.61 0-.24-.11-.44-.33-.6-.22-.16-.63-.32-1.23-.49-1.36-.37-2.04-1.09-2.04-2.14 0-.71.31-1.27.92-1.68.61-.41 1.4-.61 2.38-.61.85 0 1.63.15 2.34.46v1.68c-.63-.42-1.37-.63-2.22-.63-.46 0-.81.07-1.05.22-.24.15-.36.34-.36.58 0 .23.11.42.32.58.21.16.6.32 1.17.48 1.4.39 2.1 1.12 2.1 2.19 0 .74-.3 1.32-.91 1.75zm4.34.5H9.9V8.27h1.73v6.26h2.99v1.45zm7.36-2.44c-.16.66-.46 1.16-.9 1.5-.44.34-1.01.51-1.72.51-.7 0-1.28-.17-1.72-.51-.44-.34-.66-.82-.66-1.43h1.75c0 .25.06.43.19.54.13.11.32.17.57.17.21 0 .37-.05.48-.15.11-.1.16-.23.16-.4 0-.17-.07-.31-.2-.42-.13-.11-.37-.22-.71-.33-.69-.22-1.19-.45-1.5-.7-.31-.24-.46-.6-.46-1.07 0-.55.22-.99.65-1.31.43-.32 1-.48 1.71-.48.72 0 1.29.16 1.71.49.42.33.63.78.63 1.36h-1.71c0-.43-.21-.64-.63-.64-.19 0-.34.05-.46.15-.12.1-.17.23-.17.39 0 .15.08.28.24.39.16.11.5.24 1.03.38.72.2 1.22.44 1.5.71.28.27.42.63.42 1.09 0 .57-.21 1.03-.62 1.37z"/></svg></a><a class="sico" href="https://github.com/slabbdev" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>⬛ black boxes for systems nobody can fully trust</span>
+    <span><a href="legal.html">legal &amp; privacy</a> · static, zero tracking · © 2026 Sam Labbe</span>
+  </div>
+</footer>
+
+<script src="js/marked.min.js"></script>
+<script>
+(function(){
+  var en=false,POSTS=[],chip=null;
+  var LBL={agents:['Agents IA','AI agents'],securite:['Sécurité','Security'],preuve:['Preuve & conformité','Proof & compliance'],web:['Web & produit','Web & product'],devops:['DevOps & CI/CD','DevOps & CI/CD'],crypto:['Crypto','Crypto'],pki:['PKI &amp; certificats','PKI &amp; certificates'],ia:['IA','AI']};
+  function tl(k){var v=LBL[k]||[k,k];return en?v[1]:v[0]}
+  function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!==undefined)e.innerHTML=h;return e}
+  function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function parseFM(txt){
+    if(txt.indexOf('---')!==0)return{fm:{},body:txt};
+    var end=txt.indexOf('---',3),fm={},body=txt.slice(end+3).replace(/^\s+/,'');
+    txt.slice(3,end).split('\n').forEach(function(l){var i=l.indexOf(':');if(i>0)fm[l.slice(0,i).trim()]=l.slice(i+1).trim().replace(/^["']|["']$/g,'')});
+    return{fm:fm,body:body};
+  }
+  function title(p){return (en&&p.titre_en)?p.titre_en:p.titre}
+  function resume(p){return (en&&p.resume_en)?p.resume_en:p.resume}
+  function link(p){return (en?'en':'fr')+'/'+p.slug}
+  function card(p){
+    var d=el('a','pcard');d.href=link(p);
+    d.innerHTML=(p.image?'<img src="'+esc(p.image)+'" alt="'+esc(p.image_alt||'')+'">':'')+
+      '<div class="pbody"><span class="pd">'+p.date+(p.en?' <span class="flag">FR+EN</span>':'')+'</span>'+
+      '<h3>'+esc(title(p))+'</h3><p class="pr">'+esc(resume(p).slice(0,150))+(resume(p).length>150?'…':'')+'</p>'+
+      '<div class="pt">'+p.themes.map(function(k){return '<span class="badge">'+tl(k)+'</span>'}).join('')+'</div></div>';
+    return d;
+  }
+  function render(){
+    var hero=document.getElementById('hero');
+    hero.innerHTML='';hero.style.display=POSTS.length?'grid':'none';
+    if(POSTS.length){
+      var p=POSTS[0];
+      var f=el('div','feat');
+      f.innerHTML=(p.image?'<img src="'+esc(p.image)+'" alt="'+esc(p.image_alt||'')+'">':'')+
+        '<div class="fbody"><span class="pd" style="font-family:var(--mono);font-size:.7rem;color:var(--muted)">'+p.date+' · '+p.themes.map(tl).join(' · ')+(p.en?' · FR+EN':'')+'</span>'+
+        '<h2><a href="'+link(p)+'">'+esc(title(p))+'</a></h2><p class="pres">'+esc(resume(p).slice(0,220))+(resume(p).length>220?'…':'')+'</p>'+
+        '<a class="readmore" href="'+link(p)+'">'+(en?'read the post →':'lire l\'article →')+'</a></div>';
+      hero.appendChild(f);
+      var rest=POSTS.slice(1,6);
+      if(rest.length){
+        var side=el('div','fil'),h=el('div','filh');h.textContent=en?'the feed':'le fil des publications';side.appendChild(h);
+        rest.forEach(function(r){
+          var row=el('div','filrow');
+          var th=r.image?'<img class="rthumb" src="'+esc(r.image)+'" alt="">':'<div class="rthumb brandmark"></div>';
+          row.innerHTML=th+'<div><span class="fd">'+r.date+(r.en?' · FR+EN':'')+'</span><a href="'+link(r)+'">'+esc(title(r))+'</a></div>';
+          side.appendChild(row);
+        });
+        hero.appendChild(side);
+      }
+    }
+    var bar=document.getElementById('tbar');bar.innerHTML='';bar.style.display=POSTS.length?'flex':'none';
+    var counts={};POSTS.forEach(function(p){counts[p.themes[0]]=(counts[p.themes[0]]||0)+1});
+    var a1=el('a');a1.href='#dernieres';a1.textContent=en?'Latest':'Dernières';bar.appendChild(a1);
+    Object.keys(counts).forEach(function(k){var a=el('a');a.href='#theme-'+k;a.textContent=tl(k)+' ('+counts[k]+')';bar.appendChild(a)});
+    var dc=document.getElementById('dernCards');dc.innerHTML='';
+    POSTS.forEach(function(p){dc.appendChild(card(p))});
+    var ts=document.getElementById('tsections');ts.innerHTML='';
+    Object.keys(counts).forEach(function(k){
+      var posts=POSTS.filter(function(p){return p.themes[0]===k});
+      var sec=el('section','tsec');sec.id='theme-'+k;
+      sec.innerHTML='<p class="kicker">// '+tl(k).toLowerCase()+' — '+posts.length+(en?' posts':' articles')+'</p>';
+      var g=el('div','cards');posts.forEach(function(p){g.appendChild(card(p))});sec.appendChild(g);
+      ts.appendChild(sec);
+    });
+    document.getElementById('sub').innerHTML=en?'What I build, break and measure — published in English first, French as soon as each translation lands. Adding a post = drop a <code>.md</code> and one line in <code>INDEX.md</code>.':'Ce que je construis, ce que je casse, ce que je mesure — publié en EN d\'abord, FR dès que la traduction est prête. Ajouter un article = déposer un <code>.md</code> et une ligne dans <code>INDEX.md</code>.';
+  }
+  function renderChips(){}
+  fetch('INDEX.md').then(function(r){return r.text()}).then(function(t){
+    var slugs=t.split('\n').filter(function(l){return /^- [a-z0-9-]+$/.test(l.trim())}).map(function(l){return l.trim().slice(2)});
+    return Promise.all(slugs.map(function(slug){
+      return fetch('posts/'+slug+'.fr.md').then(function(r){return r.text()}).then(function(fr){
+        var f=parseFM(fr),p={slug:slug,titre:f.fm.titre||slug,resume:f.fm.resume||'',resume_en:f.fm.resume_en||'',titre_en:f.fm.titre_en||f.fm.titre,date:f.fm.date||'',image:f.fm.image||'',image_alt:f.fm.image_alt||'',themes:(f.fm.themes||'').split(',').map(function(x){return x.trim()}).filter(Boolean)};
+        return fetch('posts/'+slug+'.en.md').then(function(r){if(!r.ok)throw 0;return r.text()},function(){return null}).then(function(enm){
+          if(enm){var fe=parseFM(enm);p.en='en';p.titre_en=fe.fm.titre;p.resume_en=fe.fm.resume;}
+          return p;
+        });
+      });
+    }));
+  }).then(function(ps){
+    POSTS=ps.filter(function(p){return p.titre});
+    render();
+  }).catch(function(){
+    document.getElementById('list')&&(document.getElementById('list').innerHTML='<p class="sub" style="color:var(--muted)">INDEX.md introuvable.</p>');
+  });
+  var lb=document.getElementById('langBtn');
+  lb.addEventListener('click',function(){
+    en=!en;
+    document.documentElement.lang=en?'en':'fr';
+    lb.textContent=en?'FR':'EN';lb.setAttribute('aria-pressed',en?'true':'false');
+    render();
+  });
+  if(!/^fr/i.test(navigator.language||'fr')) lb.click();
+})();
+</script>
+</body>
+</html>
