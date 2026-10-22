@@ -4,6 +4,8 @@ resume: Vrai : depuis le 27 septembre 2026, la directive 2024/825 interdit les a
 date: 2026-10-22
 themes: preuve, web
 source: https://eur-lex.europa.eu/eli/dir/2024/825/oj
+image: https://blog.noirebox.eu/img/eu-green-claims-ban.jpg
+image_alt: Directive (UE) 2024/825 sur un bureau : autocollants « eco-friendly », « climate neutral » et « green » barrés par un symbole d'interdiction, marteau, drapeau européen et audit d'une landing page sur écran.
 ---
 
 Un [article dev.to](https://dev.to/shuttlewright/the-eu-banned-eco-friendly-on-27-september-check-your-landing-page-3855) très partagé en ce moment affirme que l'UE a interdit « eco-friendly » le 27 septembre, « sans période de grâce », et vous propose un balayage de 20 minutes de votre landing page. C'est exactement le genre de titre qu'on relaie avant de vérifier — l'article lui-même ne cite aucune source. Je suis allé lire [le texte officiel sur EUR-Lex](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024L0825). Verdict : **le cœur de l'affirmation est vrai**, mais trois nuances changent ce que vous devez réellement faire.

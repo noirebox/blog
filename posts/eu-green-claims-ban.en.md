@@ -4,6 +4,8 @@ resume: True: since 27 September 2026, Directive 2024/825 bans generic green cla
 date: 2026-10-22
 themes: preuve, web
 source: https://eur-lex.europa.eu/eli/dir/2024/825/oj
+image: https://blog.noirebox.eu/img/eu-green-claims-ban.jpg
+image_alt: Directive (EU) 2024/825 on a desk: stickers reading "eco-friendly", "climate neutral" and "green" crossed out by a prohibition symbol, gavel, EU flag and a landing-page audit on screen.
 ---
 
 A widely shared [dev.to post](https://dev.to/shuttlewright/the-eu-banned-eco-friendly-on-27-september-check-your-landing-page-3855) claims the EU banned "eco-friendly" on 27 September, with "no grace period", and offers a 20-minute sweep of your landing page. Exactly the kind of title people reshare before checking — and the post itself cites no sources. So I went and read [the official text on EUR-Lex](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L0825). Verdict: **the core claim is true**, but three nuances change what you actually need to do.

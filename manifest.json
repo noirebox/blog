@@ -1,13 +1,13 @@
 {
  "site": "blog.noirebox.eu",
  "format": "seal v1 — SHA-256 chain + Ed25519",
- "built_at": "2026-10-22T13:16:47+00:00",
+ "built_at": "2026-10-22T14:05:36+00:00",
  "genesis": "blog-noirebox-genesis",
  "files": [
   {
    "name": "INDEX.md",
-   "sha256": "35f0ecca34d375c16766140d136ea7247abd78dca5d6da5d5ced0e027818851b",
-   "bytes": 221
+   "sha256": "28614ffeb1991e13added02bf579873b2ffbe57c4a689b87b37a10b40a81686e",
+   "bytes": 246
   },
   {
    "name": "article.html",
@@ -26,22 +26,32 @@
   },
   {
    "name": "posts/eu-green-claims-ban.en.md",
-   "sha256": "2a99a64df612ab0f57d3f97eb3664ca9c680d7a48d1ce2c1c69d6dcf3c20ca77",
-   "bytes": 7295
+   "sha256": "ebc9e640fa992370d7685c8a926a93188155aecceef9bc4f34e57608d4249339",
+   "bytes": 7552
   },
   {
    "name": "posts/eu-green-claims-ban.fr.md",
-   "sha256": "27b4564e92a51f98083170ec5e1da5cc03dd0fdcb4a1bedbc51734e90166fad8",
-   "bytes": 8513
+   "sha256": "978ee95262311b969b02464ab62cf18c8c839c92575e2f1a85554ef8c504c645",
+   "bytes": 8800
+  },
+  {
+   "name": "posts/one-sql-update-defense.en.md",
+   "sha256": "d696390d802db2eb3b560aa1dca381a8ba372d969013973cd894084dc8d9c771",
+   "bytes": 5242
+  },
+  {
+   "name": "posts/one-sql-update-defense.fr.md",
+   "sha256": "480302c253e94feb444b0156fd4c5d6ee6f8f1b2829f29672fe3e80d043dbdc2",
+   "bytes": 5680
   },
   {
    "name": "rss.xml",
-   "sha256": "b7facd0e6d022dc90ed7467708fbfa5f39a5dbc7a1daf2c4d9a070dd8f3b7848",
-   "bytes": 882
+   "sha256": "275944ca72e68f8da81f222570583803bc68202b7351c83c6639b632275a35af",
+   "bytes": 1509
   }
  ],
- "head": "02808ba3927febd6798482163245fa82a95c12d65884ba7fa98a14987dac74c6",
- "sig": "9nvYTKIeQbHMUT5Q1U84zktYicdkce4uQE7Q8gNnFuPsdiihUbbT5UW0e4nWRRQpp9wK7b5HBBAjlUk6Tf+oAA==",
+ "head": "bab5537f3c5c4778b6ce45426de03c792411475f4e81a63a14da1f92812368e5",
+ "sig": "EIChkQoSnsyDWJCsDPU7rCk0PtB0wmz0eLIXLAOz2NSXEessAcSnoWvRSOL2aix/c+UU/1SVgPqvBeMRUZvpBg==",
  "pubkey": "rnanvciXhNbavJ5lAS1WCA4zyn9YOgPzsuOIwWC1HzI=",
  "fingerprint": "sha256:7a513360730f352a"
 }
