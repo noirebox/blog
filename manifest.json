@@ -1,7 +1,7 @@
 {
  "site": "blog.noirebox.eu",
  "format": "seal v1 — SHA-256 chain + Ed25519",
- "built_at": "2026-10-22T12:07:57+00:00",
+ "built_at": "2026-10-22T12:11:45+00:00",
  "genesis": "blog-noirebox-genesis",
  "files": [
   {
@@ -11,8 +11,8 @@
   },
   {
    "name": "article.html",
-   "sha256": "147ce991d3c3ae0567743ffc46fa183968560e16265746bdb29d48ca18c60364",
-   "bytes": 16725
+   "sha256": "8b1fb28b71670b0715b1b7f394b15bf217fc7af44ddbe198bd3e71e38748f984",
+   "bytes": 16537
   },
   {
    "name": "index.html",
@@ -21,8 +21,8 @@
   },
   {
    "name": "legal.html",
-   "sha256": "96e206433152ed9a42d8fa9f041b3a8eab4dc8e790d09fc137d7d8979c94f4e5",
-   "bytes": 5570
+   "sha256": "f9e360afea98d454f3695f2d0f3587c36b9b963e6892985d7108ccfed4618385",
+   "bytes": 5384
   },
   {
    "name": "posts/eu-green-claims-ban.en.md",
@@ -40,8 +40,8 @@
    "bytes": 882
   }
  ],
- "head": "84b5f7b6264dff4e1dfa5b820613016ecfa36262996166f523c4767776bc25e4",
- "sig": "C6So4Hp2GuEqlr5V4cRqjcYoLLefZ7zgEr1snO6msckCZOjJ+JMtE4+nXfnoxXP4wUB/sWw5qe0O5TNHQ57mAw==",
+ "head": "e1723a8edd1d9e4d7f574ea42cefd53224943313ebeda2cbd212debfe157fbef",
+ "sig": "DsiiKzKeyKgWT8ovrW9S22fBjY+tbLuNCNdYLAAriqimw40AI0jJB8wVbTUhYwt7e0727LQ4fxteZwWqNmoSBA==",
  "pubkey": "rnanvciXhNbavJ5lAS1WCA4zyn9YOgPzsuOIwWC1HzI=",
  "fingerprint": "sha256:7a513360730f352a"
 }
