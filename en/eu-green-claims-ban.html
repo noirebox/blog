@@ -87,7 +87,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
 </header>
 
 <main class="wrap" style="padding-top:44px">
-  <a class="back" href="/index.html" id="back">← tous les articles</a>
+  <a class="back" href="/index.html" id="back">← all posts</a>
 
   <div class="artwrap">
   <div class="artmain">
@@ -102,11 +102,11 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
   </div>
 
   <div class="share">
-    <span class="slab" data-share="partager|share">partager</span>
+    <span class="slab" data-share="share|share">share</span>
     <a class="sbtn" id="shX" href="#" target="_blank" rel="noopener">X</a>
     <a class="sbtn" id="shLi" href="#" target="_blank" rel="noopener">in</a>
     <a class="sbtn" id="shHn" href="#" target="_blank" rel="noopener">HN</a>
-    <button class="sbtn" id="shCopy">copier le lien</button>
+    <button class="sbtn" id="shCopy">copy link</button>
   </div>
 
   <figure class="heroimg" id="heroWrap" style="display:none">
@@ -117,7 +117,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
   <div class="md" id="content"></div>
   </div>
   <aside class="rail" id="rail" style="display:none">
-    <div class="railh" id="railh">le fil des publications</div>
+    <div class="railh" id="railh">the feed</div>
     <div id="railrows"></div>
   </aside>
 </div>
@@ -139,7 +139,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
   </div>
 
   <section class="related">
-    <p class="kicker" id="relK">sur le même sujet</p>
+    <p class="kicker" id="relK">on the same topic</p>
     <div class="rgrid" id="rgrid"></div>
   </section>
 </main>
@@ -157,7 +157,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
 (function(){
   var q=new URLSearchParams(location.search);
   var slug=window.POST_SLUG||q.get('p')||'';
-  var langs=q.get('l')==='en'?'en':'fr';
+  var langs=window.POST_LANG||'en';
   if(window.POST_LANG) langs=window.POST_LANG;
   function L(fr,en){return langs==='en'?en:fr}
   var other=(langs==='en')?'fr':'en';
@@ -187,17 +187,17 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
     document.getElementById('brole').textContent=langs==='en'?'S//ABB — independent':'S//ABB — indépendant';
     var words=c.body.split(/\s+/).length, mins=Math.max(1,Math.round(words/200));
     var d=new Intl.DateTimeFormat(lang==='en'?'en-GB':'fr-FR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(c.fm.date||Date.now()));
-    document.getElementById('bmeta').innerHTML='<span>'+d+'</span><span>'+mins+' min '+L('de lecture','read')+'</span>'+
+    document.getElementById('bmeta').innerHTML='<span>'+d+'</span><span>'+mins+' min read'+'</span>'+
       (c.fm.source?'<a href="'+esc(c.fm.source)+'" target="_blank" rel="noopener">'+L('source ↗','source ↗')+'</a>':'');
     var hw=document.getElementById('heroWrap');
     if(c.fm.image){hw.style.display='block';document.getElementById('hero').src=c.fm.image;document.getElementById('hero').alt=c.fm.image_alt||t;document.getElementById('heroCap').textContent=c.fm.image_alt||'';}
     else hw.style.display='none';
     document.getElementById('content').innerHTML=marked.parse(c.body);
     if(window.hljs) document.querySelectorAll('.md pre code').forEach(function(b){try{hljs.highlightElement(b)}catch(e){}});
-    document.getElementById('back').textContent=L('← tous les articles','← all posts');
-    document.querySelector('[data-share]').textContent=L('partager','share');
-    document.getElementById('shCopy').textContent=L('copier le lien','copy link');
-    document.getElementById('relK').textContent=L('sur le même sujet','on the same topic');
+    document.getElementById('back').textContent='← all posts';
+    document.querySelector('[data-share]').textContent='share';
+    document.getElementById('shCopy').textContent='copy link';
+    document.getElementById('relK').textContent='on the same topic';
     var u=location.href;
     document.getElementById('shX').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(t)+'&url='+encodeURIComponent(u);
     document.getElementById('shLi').href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(u);
@@ -216,7 +216,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
         var rail=document.getElementById('rail');
         if(rail&&cards.length){
           rail.style.display='block';
-          document.getElementById('railh').textContent=L('le fil des publications','the feed');
+          document.getElementById('railh').textContent='the feed';
           var rr=document.getElementById('railrows');rr.innerHTML='';
           cards.slice(0,5).forEach(function(cd){
             var row=document.createElement('a');row.className='railrow';
@@ -247,7 +247,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
   }).catch(function(){
     ['byline','.share'].forEach(function(sel){var n=document.querySelector(sel);if(n)n.style.display='none'});
     var hw=document.getElementById('heroWrap');if(hw)hw.style.display='none';
-    document.getElementById('titre').textContent=L('Article introuvable','Post not found');
+    document.getElementById('titre').textContent='Post not found';
     document.getElementById('resume').textContent=L('Cette adresse ne correspond à aucun article publié — il a peut-être été retiré, déplacé, ou pas encore traduit.','This address matches no published post — it may have been removed, moved, or not translated yet.');
     document.getElementById('content').innerHTML='<p><a class="back" href="index.html">'+L('← retour au blog','← back to the blog')+'</a> &nbsp; <a class="back" href="https://slabb.dev">'+L('← le site','← the site')+'</a></p>';
     document.getElementById('back').style.display='none';

@@ -109,7 +109,7 @@
 <script src="js/marked.min.js"></script>
 <script>
 (function(){
-  var en=false,POSTS=[],chip=null;
+  var en=true,POSTS=[],chip=null;
   var LBL={agents:['Agents IA','AI agents'],securite:['Sécurité','Security'],preuve:['Preuve & conformité','Proof & compliance'],web:['Web & produit','Web & product'],devops:['DevOps & CI/CD','DevOps & CI/CD'],crypto:['Crypto','Crypto'],pki:['PKI &amp; certificats','PKI &amp; certificates'],ia:['IA','AI']};
   function tl(k){var v=LBL[k]||[k,k];return en?v[1]:v[0]}
   function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!==undefined)e.innerHTML=h;return e}
