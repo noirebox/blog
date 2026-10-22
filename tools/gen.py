@@ -80,7 +80,7 @@ for p in posts:
     slug = p['slug']; fr = p['fr']; en = p['en']
     has_en = en is not None
     for lang in (['fr', 'en'] if has_en else ['fr']):
-        page = tpl.replace('<title>Article — Journal de bord</title>',
+        page = tpl.replace('<title>Article — NoireBox blog</title>',
                            head(lang, slug, fr, en))
         d = root / lang
         d.mkdir(exist_ok=True)
