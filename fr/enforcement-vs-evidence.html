@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contrôle vs preuve : pourquoi OWASP ACS et l&#x27;identité NIST ont quand même besoin d&#x27;un journal — NoireBox blog</title>
+<meta name="description" content="2026 a livré du contrôle sérieux pour les agents IA — OWASP ACS, identité NIST, control plane KedgeFlow. Leurs propres évaluations admettent ce qu&#x27;ils ne font pas : prouver ce qui a été décidé, après coup, à quelqu&#x27;un qui ne vous fait pas confiance. C&#x27;est une autre couche.">
+<link rel="canonical" href="https://blog.noirebox.eu/fr/enforcement-vs-evidence">
+<link rel="alternate" hreflang="fr" href="https://blog.noirebox.eu/en/enforcement-vs-evidence">
+<link rel="alternate" hreflang="en" href="https://blog.noirebox.eu/en/enforcement-vs-evidence">
+<link rel="alternate" hreflang="x-default" href="https://blog.noirebox.eu/fr/enforcement-vs-evidence">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NoireBox blog">
+<meta property="og:title" content="Contrôle vs preuve : pourquoi OWASP ACS et l&#x27;identité NIST ont quand même besoin d&#x27;un journal">
+<meta property="og:description" content="2026 a livré du contrôle sérieux pour les agents IA — OWASP ACS, identité NIST, control plane KedgeFlow. Leurs propres évaluations admettent ce qu&#x27;ils ne font pas : prouver ce qui a été décidé, après coup, à quelqu&#x27;un qui ne vous fait pas confiance. C&#x27;est une autre couche.">
+<meta property="og:url" content="https://blog.noirebox.eu/fr/enforcement-vs-evidence">
+<meta property="article:published_time" content="2026-10-22">
+<meta property="og:image" content="https://blog.noirebox.eu/img/enforcement-vs-evidence.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contrôle vs preuve : pourquoi OWASP ACS et l&#x27;identité NIST ont quand même besoin d&#x27;un journal">
+<meta name="twitter:description" content="2026 a livré du contrôle sérieux pour les agents IA — OWASP ACS, identité NIST, control plane KedgeFlow. Leurs propres évaluations admettent ce qu&#x27;ils ne font pas : prouver ce qui a été décidé, après coup, à quelqu&#x27;un qui ne vous fait pas confiance. C&#x27;est une autre couche.">
+<meta name="twitter:image" content="https://blog.noirebox.eu/img/enforcement-vs-evidence.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Contrôle vs preuve : pourquoi OWASP ACS et l'identité NIST ont quand même besoin d'un journal", "description": "2026 a livré du contrôle sérieux pour les agents IA — OWASP ACS, identité NIST, control plane KedgeFlow. Leurs propres évaluations admettent ce qu'ils ne font pas : prouver ce qui a été décidé, après coup, à quelqu'un qui ne vous fait pas confiance. C'est une autre couche.", "url": "https://blog.noirebox.eu/fr/enforcement-vs-evidence", "mainEntityOfPage": "https://blog.noirebox.eu/fr/enforcement-vs-evidence", "datePublished": "2026-10-22", "inLanguage": "fr", "author": {"@type": "Person", "name": "Sam Labbe", "url": "https://slabb.dev"}, "publisher": {"@type": "Person", "name": "Sam Labbe"}, "image": ["https://blog.noirebox.eu/img/enforcement-vs-evidence.jpg"]}</script>
+<script>window.POST_SLUG="enforcement-vs-evidence";window.POST_LANG="fr";window.POST_HAS_EN="true";</script>
+</head>
+<link rel="icon" type="image/png" href="img/noirebox-icon.png">
+<link href="/css/style.css" rel="stylesheet">
+<meta name="description" content="">
+<style>
+.cats{margin-bottom:16px}
+h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
+.recap{font-size:1.06rem;color:var(--dim);border-left:2px solid var(--accent);padding-left:18px;margin:20px 0 30px}
+.byline{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.avatar{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:#c0392b url(/img/sam-labbe.jpeg) center/cover;flex:none}
+.binfo b{display:block;font-weight:500;font-size:.95rem}
+.binfo span{color:var(--muted);font-size:.8rem;font-family:var(--mono)}
+.bmeta{margin-left:auto;text-align:right;font-family:var(--mono);font-size:.74rem;color:var(--muted);display:flex;flex-direction:column;gap:2px}
+.bmeta a{color:var(--dim);border-bottom:1px solid var(--line)}
+.bmeta a:hover{color:var(--accent);border-color:var(--accent)}
+.share{display:flex;align-items:center;gap:10px;margin:18px 0 30px;flex-wrap:wrap}
+.slab{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.sbtn{font-family:var(--mono);font-size:.74rem;color:var(--dim);border:1px solid var(--line);background:none;padding:6px 13px;border-radius:999px;cursor:pointer;transition:color .15s,border-color .15s}
+.sbtn:hover{color:var(--accent);border-color:var(--accent)}
+.heroimg{margin:14px 0 42px}
+.heroimg img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.heroimg figcaption{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:8px}
+.authorbox{display:flex;gap:18px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;margin:56px 0 0;flex-wrap:wrap}
+.authorbox .avatar{width:54px;height:54px;font-size:1rem}
+.authorbox .ab b{display:block;font-weight:500}
+.authorbox .ab span{color:var(--dim);font-size:.88rem}
+.authorbox .al{margin-left:auto;display:flex;gap:16px;font-family:var(--mono);font-size:.76rem}
+.authorbox .al a{color:var(--dim);border-bottom:1px solid var(--line)}
+.authorbox .al a:hover{color:var(--accent);border-color:var(--accent)}
+.related{margin-top:56px}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s}
+.rcard:hover{border-color:var(--accent)}
+.rcard .rd{font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.rcard .rt{font-size:.95rem;font-weight:500}
+.rcard .rb{font-family:var(--mono);font-size:.66rem;color:var(--accent)}
+.artwrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.rail{position:sticky;top:84px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px 16px 10px;align-self:start}
+.railh{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 0 10px;border-bottom:1px solid var(--line)}
+.railrow{display:flex;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.railrow:last-child{border-bottom:none}
+.railrow img,.railrow .rthumb{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;border:1px solid var(--line)}
+.railrow .rthumb.brandmark{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0b0d'/%3E%3Crect x='20' y='20' width='24' height='24' rx='4' fill='%237de8a9'/%3E%3C/svg%3E") center/cover}
+.railrow .ri{min-width:0}
+.railrow .rd{font-family:var(--mono);font-size:.66rem;color:var(--muted)}
+.railrow .rt{font-size:.88rem;font-weight:500;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.railrow a.rt:hover{color:var(--accent)}
+@media (max-width:900px){.artwrap{grid-template-columns:1fr}.rail{position:static}}
+@media (max-width:820px){.rgrid{grid-template-columns:1fr}.bmeta{margin-left:0;text-align:left}}
+.sico{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);color:var(--dim);display:inline-flex;align-items:center;justify-content:center;transition:color .15s,border-color .15s}
+.sico:hover{color:var(--accent);border-color:var(--accent)}
+.sico svg{fill:currentColor}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="/index.html">NOIRE<span style="color:var(--violet)">BOX</span></a><span style="font-family:var(--mono);font-size:.7rem;color:var(--muted)">blog.noirebox.eu</span><span style="font-family:var(--mono);font-size:.7rem;color:var(--muted)">blog.noirebox.eu</span>
+    <div class="barright">
+      <span class="pill" id="langSwitch" style="cursor:pointer;display:none"></span>
+      <a class="pill" href="https://slabb.dev">← le site</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" style="padding-top:44px">
+  <a class="back" href="/index.html" id="back">← all posts</a>
+
+  <div class="artwrap">
+  <div class="artmain">
+  <div class="cats" id="cats"></div>
+  <h1 id="titre"></h1>
+  <p class="recap" id="resume"></p>
+
+  <div class="byline">
+    <div class="avatar"></div>
+    <div class="binfo"><b>Sam LABBE</b><span id="brole">S//ABB — indépendant</span></div>
+    <div class="bmeta" id="bmeta"></div>
+  </div>
+
+  <div class="share">
+    <span class="slab" data-share="share|share">share</span>
+    <a class="sbtn" id="shX" href="#" target="_blank" rel="noopener">X</a>
+    <a class="sbtn" id="shLi" href="#" target="_blank" rel="noopener">in</a>
+    <a class="sbtn" id="shHn" href="#" target="_blank" rel="noopener">HN</a>
+    <button class="sbtn" id="shCopy">copy link</button>
+  </div>
+
+  <figure class="heroimg" id="heroWrap" style="display:none">
+    <img id="hero" alt="">
+    <figcaption id="heroCap"></figcaption>
+  </figure>
+
+  <div class="md" id="content"></div>
+  </div>
+  <aside class="rail" id="rail" style="display:none">
+    <div class="railh" id="railh">the feed</div>
+    <div id="railrows"></div>
+  </aside>
+</div>
+
+  <div class="authorbox">
+    <div class="avatar"></div>
+    <div class="ab">
+      <b>Sam LABBE</b>
+      <span data-bio="Lead developer (2004 →). S//ABB · NoireBox · navette — des outils qui prouvent ce qu'ils font.">Lead developer (2004 →). S//ABB · NoireBox · navette — des outils qui prouvent ce qu'ils font.</span>
+    </div>
+    <div class="al">
+      <a href="https://slabb.dev" target="_blank" rel="noopener">slabb.dev</a>
+      <a href="https://github.com/slabbdev" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://dev.to/slabb" target="_blank" rel="noopener">dev.to</a>
+      <a class="sico" href="https://x.com/slabbbbbbbbbbbb" aria-label="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a class="sico" href="https://bsky.app/profile/slabbdev.bsky.social" aria-label="Bluesky" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.416-.056-.136.022-.276.04-.416.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 0-.415-.056c.14-.017.276-.04.415-.056 2.67-.297 5.568-1.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg></a>
+      <a class="sico" href="https://dev-null.sh/@slabbdev" aria-label="dev-null" target="_blank" rel="noopener" style="width:auto;padding:0 10px;font-family:var(--mono);font-size:.62rem">/dev/null</a>
+    </div>
+  </div>
+
+  <section class="related">
+    <p class="kicker" id="relK">on the same topic</p>
+    <div class="rgrid" id="rgrid"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>⬛ black boxes for systems nobody can fully trust</span>
+    <span><a href="legal.html">legal &amp; privacy</a> · statique, zéro tracking · © 2026 Sam Labbe</span>
+  </div>
+</footer>
+
+<script src="/js/marked.min.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search);
+  var slug=window.POST_SLUG||q.get('p')||'';
+  var langs=window.POST_LANG||'en';
+  if(window.POST_LANG) langs=window.POST_LANG;
+  function L(fr,en){return langs==='en'?en:fr}
+  var other=(langs==='en')?'fr':'en';
+  var sw=document.getElementById('langSwitch');
+  var cache={};
+  function L(fr,en){return langs==='en'?en:fr}
+  function parseFM(txt){
+    if(txt.indexOf('---')!==0)return{fm:{},body:txt};
+    var end=txt.indexOf('---',3),fm={},body=txt.slice(end+3).replace(/^\s+/,'');
+    txt.slice(3,end).split('\n').forEach(function(l){var i=l.indexOf(':');if(i>0)fm[l.slice(0,i).trim()]=l.slice(i+1).trim().replace(/^["']|["']$/g,'')});
+    return{fm:fm,body:body};
+  }
+  var LBL={agents:['Agents IA','AI agents'],securite:['Sécurité','Security'],preuve:['Preuve & conformité','Proof & compliance'],web:['Web & produit','Web & product'],devops:['DevOps & CI/CD','DevOps & CI/CD'],crypto:['Crypto','Crypto'],pki:['PKI &amp; certificats','PKI &amp; certificates']};
+  function tl(k){var v=LBL[k]||[k,k];return langs==='en'?v[1]:v[0]}
+  function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function render(lang){
+    var c=cache[lang];if(!c)return;
+    document.documentElement.lang=lang;
+    var t=(lang==='en'&&c.fm.titre_en)?c.fm.titre_en:c.fm.titre;
+    var res=(lang==='en'&&c.fm.resume_en)?c.fm.resume_en:c.fm.resume;
+    document.title=t+' — NoireBox blog';
+    var cl=document.querySelector('link[rel="canonical"]')||document.createElement('link');cl.rel='canonical';cl.href='https://blog.noirebox.eu/posts/'+slug;document.head.appendChild(cl);
+    document.getElementById('cats').innerHTML=(c.fm.themes||'').split(',').map(function(k){return '<span class="badge">'+tl(k.trim())+'</span>'}).join('');
+    document.getElementById('titre').textContent=t;
+    document.getElementById('resume').textContent=res||'';
+    var mdd=document.querySelector('meta[name="description"]');if(mdd)mdd.setAttribute('content',res||'');
+    document.getElementById('brole').textContent=langs==='en'?'S//ABB — independent':'S//ABB — indépendant';
+    var words=c.body.split(/\s+/).length, mins=Math.max(1,Math.round(words/200));
+    var d=new Intl.DateTimeFormat(lang==='en'?'en-GB':'fr-FR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(c.fm.date||Date.now()));
+    document.getElementById('bmeta').innerHTML='<span>'+d+'</span><span>'+mins+' min read'+'</span>'+
+      (c.fm.source?'<a href="'+esc(c.fm.source)+'" target="_blank" rel="noopener">'+L('source ↗','source ↗')+'</a>':'');
+    var hw=document.getElementById('heroWrap');
+    if(c.fm.image){hw.style.display='block';document.getElementById('hero').src=c.fm.image;document.getElementById('hero').alt=c.fm.image_alt||t;document.getElementById('heroCap').textContent=c.fm.image_alt||'';}
+    else hw.style.display='none';
+    document.getElementById('content').innerHTML=marked.parse(c.body);
+    if(window.hljs) document.querySelectorAll('.md pre code').forEach(function(b){try{hljs.highlightElement(b)}catch(e){}});
+    document.getElementById('back').textContent='← all posts';
+    document.querySelector('[data-share]').textContent='share';
+    document.getElementById('shCopy').textContent='copy link';
+    document.getElementById('relK').textContent='on the same topic';
+    var u=location.href;
+    document.getElementById('shX').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(t)+'&url='+encodeURIComponent(u);
+    document.getElementById('shLi').href='https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(u);
+    document.getElementById('shHn').href='https://news.ycombinator.com/submitlink?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t);
+  }
+  function related(){
+    fetch('/INDEX.md').then(function(r){return r.text()}).then(function(t){
+      var slugs=t.split('\n').filter(function(l){return /^- [a-z0-9-]+$/.test(l.trim())}).map(function(l){return l.trim().slice(2)}).filter(function(x){return x!==slug});
+      Promise.all(slugs.map(function(sg){
+        return fetch('/posts/'+sg+'.fr.md').then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(txt){
+          var f=parseFM(txt);
+          return {slug:sg,titre:f.fm.titre,titre_en:f.fm.titre_en,date:f.fm.date,image:f.fm.image||'',themes:(f.fm.themes||'').split(',').map(function(x){return x.trim()})};
+        },function(){return null});
+      })).then(function(cards){
+        cards=cards.filter(Boolean);
+        var rail=document.getElementById('rail');
+        if(rail&&cards.length){
+          rail.style.display='block';
+          document.getElementById('railh').textContent='the feed';
+          var rr=document.getElementById('railrows');rr.innerHTML='';
+          cards.slice(0,5).forEach(function(cd){
+            var row=document.createElement('a');row.className='railrow';
+            row.href=window.POST_SLUG?('/'+langs+'/'+cd.slug):('article.html?p='+encodeURIComponent(cd.slug)+(langs==='en'?'&l=en':''));
+            row.innerHTML=(cd.image?'<img src="'+esc(cd.image)+'" alt="">':'<div class="rthumb brandmark"></div>')+
+              '<div class="ri"><span class="rd">'+cd.date+(cd.image?'':'')+'</span><div class="rt">'+esc((langs==='en'&&cd.titre_en)?cd.titre_en:cd.titre)+'</div></div>';
+            rr.appendChild(row);
+          });
+        }
+        var mine=(cache.fr.fm.themes||'').split(',').map(function(x){return x.trim()});
+        cards.sort(function(a,b){return (b.themes.filter(function(k){return mine.indexOf(k)>=0}).length)-(a.themes.filter(function(k){return mine.indexOf(k)>=0}).length)});
+        var g=document.getElementById('rgrid');g.innerHTML='';
+        cards.slice(0,3).forEach(function(cd){
+          var d=document.createElement('a');d.className='rcard';d.href='article.html?p='+encodeURIComponent(cd.slug)+(langs==='en'?'&l=en':'');
+          d.innerHTML='<span class="rb">'+(cd.themes[0]||'')+'</span><span class="rt">'+esc((langs==='en'&&cd.titre_en)?cd.titre_en:cd.titre)+'</span><span class="rd">'+cd.date+'</span>';
+          g.appendChild(d);
+        });
+      });
+    });
+  }
+  fetch('/posts/'+slug+'.fr.md').then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(fr){
+    cache.fr=parseFM(fr);
+    fetch('/posts/'+slug+'.en.md').then(function(r){if(!r.ok)throw 0;return r.text()},function(){return null}).then(function(enm){
+      if(enm){cache.en=parseFM(enm);cache.en.fm.titre_en=cache.en.fm.titre;cache.en.fm.resume_en=cache.en.fm.resume;sw.style.display='inline-block';sw.textContent=other.toUpperCase();
+        sw.onclick=function(){location.href='/'+other+'/'+slug};}
+      render(langs);related();
+    });
+  }).catch(function(){
+    ['byline','.share'].forEach(function(sel){var n=document.querySelector(sel);if(n)n.style.display='none'});
+    var hw=document.getElementById('heroWrap');if(hw)hw.style.display='none';
+    document.getElementById('titre').textContent='Post not found';
+    document.getElementById('resume').textContent=L('Cette adresse ne correspond à aucun article publié — il a peut-être été retiré, déplacé, ou pas encore traduit.','This address matches no published post — it may have been removed, moved, or not translated yet.');
+    document.getElementById('content').innerHTML='<p><a class="back" href="index.html">'+L('← retour au blog','← back to the blog')+'</a> &nbsp; <a class="back" href="https://slabb.dev">'+L('← le site','← the site')+'</a></p>';
+    document.getElementById('back').style.display='none';
+  });
+})();
+</script>
+</body>
+</html>

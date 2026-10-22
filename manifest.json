@@ -1,13 +1,13 @@
 {
  "site": "blog.noirebox.eu",
  "format": "seal v1 — SHA-256 chain + Ed25519",
- "built_at": "2026-10-22T14:05:36+00:00",
+ "built_at": "2026-10-22T18:14:23+00:00",
  "genesis": "blog-noirebox-genesis",
  "files": [
   {
    "name": "INDEX.md",
-   "sha256": "28614ffeb1991e13added02bf579873b2ffbe57c4a689b87b37a10b40a81686e",
-   "bytes": 246
+   "sha256": "1a9071a03a809da3b95cd8669dc68d2b82ebde566e48d53d1d51ff3bd9fd4191",
+   "bytes": 613
   },
   {
    "name": "article.html",
@@ -25,6 +25,46 @@
    "bytes": 5378
   },
   {
+   "name": "posts/chatbot-art50-production.en.md",
+   "sha256": "7c2fd9059666ef98aee745501acf0e21c5a0a00575cc131c3f583ebea7adcf3a",
+   "bytes": 3686
+  },
+  {
+   "name": "posts/chatbot-art50-production.fr.md",
+   "sha256": "e6faa574a4f4f6796c41537c8ebe3db3714d65ab1d65c146181fa869b4b42e25",
+   "bytes": 4228
+  },
+  {
+   "name": "posts/did-it-happen-reconciliation.en.md",
+   "sha256": "c212f3cabbc253d9d6e49891ad99702dec60310a7fcd1083b02f60cb145b562e",
+   "bytes": 3210
+  },
+  {
+   "name": "posts/did-it-happen-reconciliation.fr.md",
+   "sha256": "049b94d355290f565046afa3e6bb9b71cc2b24170c285a3d9417ad5037b3a3cf",
+   "bytes": 3784
+  },
+  {
+   "name": "posts/dpia-fria-one-meeting.en.md",
+   "sha256": "c90e3b8c4a5b1fe0a2a28ff2262619f1bb2023f36158be4d0925ab56c970e323",
+   "bytes": 3685
+  },
+  {
+   "name": "posts/dpia-fria-one-meeting.fr.md",
+   "sha256": "9b55f254e2a802d67f037333d4db3e495f085ea7f77aa5c68211da67d9827fca",
+   "bytes": 4369
+  },
+  {
+   "name": "posts/enforcement-vs-evidence.en.md",
+   "sha256": "b2e02a2bd8098c4a9f09fd6b0c9a355d4b8f21658f5381eae9d24f439bc5bb87",
+   "bytes": 3808
+  },
+  {
+   "name": "posts/enforcement-vs-evidence.fr.md",
+   "sha256": "afaf79b4621f5b26be87e5073e1576d96cf3990d87a7b74c43b4ba47f967cd2e",
+   "bytes": 4272
+  },
+  {
    "name": "posts/eu-green-claims-ban.en.md",
    "sha256": "ebc9e640fa992370d7685c8a926a93188155aecceef9bc4f34e57608d4249339",
    "bytes": 7552
@@ -33,6 +73,66 @@
    "name": "posts/eu-green-claims-ban.fr.md",
    "sha256": "978ee95262311b969b02464ab62cf18c8c839c92575e2f1a85554ef8c504c645",
    "bytes": 8800
+  },
+  {
+   "name": "posts/execution-time-identity.en.md",
+   "sha256": "31b49225b4d6904d847e2fff7bb832be048ab620470ce6b701c5cffabf3f06eb",
+   "bytes": 3945
+  },
+  {
+   "name": "posts/execution-time-identity.fr.md",
+   "sha256": "8d38f88ed54b13b02a5da0bae7e08d28cd6d6aa0c55a928ab34bac3c31140b8b",
+   "bytes": 4553
+  },
+  {
+   "name": "posts/gpai-code-deadlines.en.md",
+   "sha256": "5a700c69e5b859a24bca73ebab83c4806b199267b15e8b5de85030c76de21405",
+   "bytes": 3306
+  },
+  {
+   "name": "posts/gpai-code-deadlines.fr.md",
+   "sha256": "77749535d75b4dddd21249fd82cadabb583747663ed9990323f07cf732097af1",
+   "bytes": 3874
+  },
+  {
+   "name": "posts/label-stripped-receipt-cant.en.md",
+   "sha256": "09a328c6007ac7fc1a304532eb193eca1f9387419e0a35c8cf785f4854900705",
+   "bytes": 3577
+  },
+  {
+   "name": "posts/label-stripped-receipt-cant.fr.md",
+   "sha256": "0c2de24929196029833300516cab3b853590892a2a9a0ac1c6c5871554b346d4",
+   "bytes": 3945
+  },
+  {
+   "name": "posts/logging-90-day-plan.en.md",
+   "sha256": "17a5a7b1986f922750ef85f2f2403097bcfb44c3f4774b37f44f76dbb40de35c",
+   "bytes": 3664
+  },
+  {
+   "name": "posts/logging-90-day-plan.fr.md",
+   "sha256": "467ebcce45d3099b8424ca3cbce56c0887f263b15a32735610e00cbdaefaecd3",
+   "bytes": 4423
+  },
+  {
+   "name": "posts/logs-are-not-evidence.en.md",
+   "sha256": "eedc31a46a61e96963aeaf49748391682d2e4950e212f2a8098a7452a44ddcf1",
+   "bytes": 3331
+  },
+  {
+   "name": "posts/logs-are-not-evidence.fr.md",
+   "sha256": "7c67025c23553fbc097c36fc364d29cca4f0126669eb93128faf3c9d170c1113",
+   "bytes": 3677
+  },
+  {
+   "name": "posts/omnibus-december-2026.en.md",
+   "sha256": "09186d013f35ec05f9e9a60d1214b7619d72fad49aae6c52a21c788fb740da00",
+   "bytes": 3855
+  },
+  {
+   "name": "posts/omnibus-december-2026.fr.md",
+   "sha256": "849ace21fd5d5f110e66de25d823e2019dd25585a78f8b2807b3f03cacd09a14",
+   "bytes": 4125
   },
   {
    "name": "posts/one-sql-update-defense.en.md",
@@ -45,13 +145,53 @@
    "bytes": 5680
   },
   {
+   "name": "posts/prompt-injection-supply-chain.en.md",
+   "sha256": "62b9863d5173db3483c078fb90e0befd73b922da3feef6a6560aa18dd0576335",
+   "bytes": 3718
+  },
+  {
+   "name": "posts/prompt-injection-supply-chain.fr.md",
+   "sha256": "d3aa2e4802bddbf7137b1a9fdbab78b9a6f2c75fd74fd58e7531a6a0c7ac7e14",
+   "bytes": 4323
+  },
+  {
+   "name": "posts/proving-what-agent-was-never-told.en.md",
+   "sha256": "edc5fb5e773e26f64f6419edb955594cba1b5cdf83976648852e0b723359b76d",
+   "bytes": 3652
+  },
+  {
+   "name": "posts/proving-what-agent-was-never-told.fr.md",
+   "sha256": "81cebc3e8ac73be3bc7cdb70f42a9d6c4cf6429877edd7a0f54e9a7f1a65917b",
+   "bytes": 4217
+  },
+  {
+   "name": "posts/six-months-of-logs.en.md",
+   "sha256": "baad3af448c4e35fe5e12cb8ba4569140f74c3cd08217d8c2a13e4c0eeb1c647",
+   "bytes": 3485
+  },
+  {
+   "name": "posts/six-months-of-logs.fr.md",
+   "sha256": "0384d4c414294e4747d8fb5fabf0abb60cb246e245d2c5a4f3a37ebae79a581d",
+   "bytes": 4143
+  },
+  {
+   "name": "posts/twenty-four-mutants.en.md",
+   "sha256": "b6e95880bdeb13ea7f2c70ac7027271af8779e4f8169cf1c81355597a48420e1",
+   "bytes": 3120
+  },
+  {
+   "name": "posts/twenty-four-mutants.fr.md",
+   "sha256": "4866b39272277ead5eef00d67bd1b5e8e588e6a44bfda505e6fb6bc16b467252",
+   "bytes": 3710
+  },
+  {
    "name": "rss.xml",
-   "sha256": "275944ca72e68f8da81f222570583803bc68202b7351c83c6639b632275a35af",
-   "bytes": 1509
+   "sha256": "0ceccb827af05628928165dbb1dc8a4219dc0aa4c2b17ff0e8eeabada962c24e",
+   "bytes": 10027
   }
  ],
- "head": "bab5537f3c5c4778b6ce45426de03c792411475f4e81a63a14da1f92812368e5",
- "sig": "EIChkQoSnsyDWJCsDPU7rCk0PtB0wmz0eLIXLAOz2NSXEessAcSnoWvRSOL2aix/c+UU/1SVgPqvBeMRUZvpBg==",
+ "head": "568d46686691e1ca1eab3e9a0bd8bf52e272cb047a7ed004ee8b0b294f8f8836",
+ "sig": "2MKHgvTpOcuFJKrNcmX03vmIDv49FhhU/YCs3Y8nqk8PzYWjjHXLrce934ETTvIIXSCjCMTFsBSEl6si5K8NCA==",
  "pubkey": "rnanvciXhNbavJ5lAS1WCA4zyn9YOgPzsuOIwWC1HzI=",
  "fingerprint": "sha256:7a513360730f352a"
 }
