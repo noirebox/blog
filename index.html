@@ -123,7 +123,7 @@
   }
   function title(p){return (en&&p.titre_en)?p.titre_en:p.titre}
   function resume(p){return (en&&p.resume_en)?p.resume_en:p.resume}
-  function link(p){return (en?'en':'fr')+'/'+p.slug}
+  function link(p){return (en&&p.en?'en':'fr')+'/'+p.slug}
   function card(p){
     var d=el('a','pcard');d.href=link(p);
     d.innerHTML=(p.image?'<img src="'+esc(p.image)+'" alt="'+esc(p.image_alt||'')+'">':'')+

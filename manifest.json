@@ -1,7 +1,7 @@
 {
  "site": "blog.noirebox.eu",
  "format": "seal v1 — SHA-256 chain + Ed25519",
- "built_at": "2026-10-23T12:16:25+00:00",
+ "built_at": "2026-10-23T15:30:35+00:00",
  "genesis": "blog-noirebox-genesis",
  "files": [
   {
@@ -11,13 +11,13 @@
   },
   {
    "name": "article.html",
-   "sha256": "c081e3849a6b7835c8d8558f0ed11f434f4e94cc51f4d00e091ae93940a26c9b",
-   "bytes": 16467
+   "sha256": "6e76bfc23ac4fdd7533473cc5697e53ba1c936aa9d4f3f632ace93343c22e498",
+   "bytes": 16497
   },
   {
    "name": "index.html",
-   "sha256": "b1aaa81948e708bfe7a083c0e7c30a70253bf4271af25914042e9e5130e122bc",
-   "bytes": 17619
+   "sha256": "1b16f3344a6f22d43f2adf41925302d271d5894a58b9cd5a4bb51fa4750d108d",
+   "bytes": 17625
   },
   {
    "name": "legal.html",
@@ -200,8 +200,8 @@
    "bytes": 10694
   }
  ],
- "head": "b1eb8a62f8a2fdda3b2304800608eb43e1e45d5e3313fe5191aa61d801e0ebcb",
- "sig": "LAkJVHDPoudh/UU2XwDEvAleYLIbEUqhGRDZFq6ec0mS+ejJPpZ9VExZVkLxiJBn0c99bhICi34MsPRiWlcBCw==",
+ "head": "ca6ffb4666d270c844664c2e4e2fcde837e98f94721c8b615e837c0c5e520ced",
+ "sig": "xYEPGlXzDkGexBTeKucsUociEV6/TSHI4Jb25nfqt9/HZQ186ZQrz7TAH2ddf3oDmZUonIJq5elQOXCOY1/bAw==",
  "pubkey": "rnanvciXhNbavJ5lAS1WCA4zyn9YOgPzsuOIwWC1HzI=",
  "fingerprint": "sha256:7a513360730f352a"
 }
