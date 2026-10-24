@@ -170,17 +170,17 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
     document.getElementById('brole').textContent=langs==='en'?'S//ABB — independent':'S//ABB — indépendant';
     var words=c.body.split(/\s+/).length, mins=Math.max(1,Math.round(words/200));
     var d=new Intl.DateTimeFormat(lang==='en'?'en-GB':'fr-FR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(c.fm.date||Date.now()));
-    document.getElementById('bmeta').innerHTML='<span>'+d+'</span><span>'+mins+' min read'+'</span>'+
+    document.getElementById('bmeta').innerHTML='<span>'+d+'</span><span>'+mins+' min '+L('de lecture','read')+'</span>'+
       (c.fm.source?'<a href="'+esc(c.fm.source)+'" target="_blank" rel="noopener">'+L('source ↗','source ↗')+'</a>':'');
     var hw=document.getElementById('heroWrap');
     if(c.fm.image){hw.style.display='block';document.getElementById('hero').src=c.fm.image;document.getElementById('hero').alt=c.fm.image_alt||t;document.getElementById('heroCap').textContent=c.fm.image_alt||'';}
     else hw.style.display='none';
     document.getElementById('content').innerHTML=marked.parse(c.body);
     if(window.hljs) document.querySelectorAll('.md pre code').forEach(function(b){try{hljs.highlightElement(b)}catch(e){}});
-    document.getElementById('back').textContent='← all posts';
+    document.getElementById('back').textContent=L('← tous les articles','← all posts');
     document.querySelector('[data-share]').textContent='share';
     document.getElementById('shCopy').textContent='copy link';
-    document.getElementById('relK').textContent='on the same topic';
+    document.getElementById('relK').textContent=L('sur le même sujet','on the same topic');
     var ab=document.querySelector('.ab span');
     if(ab)ab.textContent=L('Lead developer (2004 →). S//ABB · NoireBox · navette — des outils qui prouvent ce qu\'ils font.','Lead developer since 2004. S//ABB · NoireBox · navette — tools that prove what they do.');
     var ft=document.getElementById('footTxt');
@@ -204,7 +204,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
         var rail=document.getElementById('rail');
         if(rail&&cards.length){
           rail.style.display='block';
-          document.getElementById('railh').textContent='the feed';
+          document.getElementById('railh').textContent=L('le fil des publications','the feed');
           var rr=document.getElementById('railrows');rr.innerHTML='';
           cards.slice(0,5).forEach(function(cd){
             var row=document.createElement('a');row.className='railrow';
