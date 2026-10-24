@@ -111,7 +111,7 @@
 <script>
 (function(){
   var savedL=null; try{ savedL=localStorage.getItem('nblang'); }catch(e){}
-  var en= savedL ? savedL==='en' : !/^fr/i.test(navigator.language||'fr'),POSTS=[],chip=null;
+  var en= savedL ? savedL==='en' : true,POSTS=[],chip=null;
   var ENST={};
   document.querySelectorAll('[data-fr]').forEach(function(n){ENST[n]=n.textContent;});
   function applyStatic(){document.querySelectorAll('[data-fr]').forEach(function(n){n.textContent=en?ENST[n]:n.getAttribute('data-fr');});}
