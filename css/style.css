@@ -14,7 +14,7 @@ a{color:var(--fg);text-decoration:none}
 .wide{max-width:1000px}
 .kicker{font-family:var(--mono);font-size:.78rem;letter-spacing:.09em;color:var(--accent);margin-bottom:18px}
 header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);z-index:10}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 28px}
 .brand{font-family:var(--mono);font-size:.95rem}
 .brand span{color:var(--dim)}
 .barright{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
@@ -36,7 +36,7 @@ h1{font-size:clamp(2rem,5vw,3rem);font-weight:500;letter-spacing:-.02em;margin-b
 .post .ptags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .flag{font-family:var(--mono);font-size:.68rem;color:var(--muted);border:1px solid var(--line);padding:2px 7px;border-radius:4px}
 footer{border-top:1px solid var(--line);margin-top:72px}
-.foot{padding:26px 0 36px;font-family:var(--mono);font-size:.74rem;color:var(--dim);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.foot{padding:26px 28px 36px;font-family:var(--mono);font-size:.74rem;color:var(--dim);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .foot a{border-bottom:1px solid var(--line)}
 .foot a:hover{color:var(--accent);border-color:var(--accent)}
 /* page article */
@@ -74,13 +74,13 @@ footer{border-top:1px solid var(--line);margin-top:72px}
 .md table{display:block;width:max-content;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-collapse:collapse;margin:0 0 20px;font-size:.95rem}
 .md th,.md td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
 .md th{background:var(--surface);font-weight:600}
-.md p,.md h1,.md h2,.md h3,.md h4,.md li{overflow-wrap:break-word}
+.md p,.md h1,.md h2,.md h3,.md h4,.md li{overflow-wrap:anywhere}
 .md code{overflow-wrap:anywhere}
 /* --- small screens --- */
 @media (max-width:640px){
   .wrap{padding:0 16px}
-  .bar{padding:14px 0;gap:10px}
+  .bar{padding:14px 16px;gap:10px}
   .md{font-size:.98rem}
   .md pre{padding:14px;font-size:.85rem}
-  .foot{font-size:.7rem}
+  .foot{font-size:.7rem;padding:20px 16px 30px}
 }
