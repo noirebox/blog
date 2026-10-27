@@ -1,13 +1,13 @@
 {
  "site": "blog.noirebox.eu",
  "format": "seal v1 — SHA-256 chain + Ed25519",
- "built_at": "2026-10-27T16:39:27+00:00",
+ "built_at": "2026-10-27T16:47:50+00:00",
  "genesis": "blog-noirebox-genesis",
  "files": [
   {
    "name": "INDEX.md",
-   "sha256": "2eb3d99bb99fd8e9fbd4de20d27bd251438f75499513b3eb02257241c4a7badb",
-   "bytes": 643
+   "sha256": "b10dd76b8f7eba8a4a5a048bdc71906cdd2516340d039eb70684fbcd1da3272b",
+   "bytes": 672
   },
   {
    "name": "article.html",
@@ -105,6 +105,16 @@
    "bytes": 3874
   },
   {
+   "name": "posts/iso-24970-logging-standard.en.md",
+   "sha256": "aade9e0aa65d43948167214b06287bd1d71f01045046cf2b7237b17a96a0a428",
+   "bytes": 4332
+  },
+  {
+   "name": "posts/iso-24970-logging-standard.fr.md",
+   "sha256": "fbddc8ffba3c5a9c56388b09431d73bbb545ffdd698bf146f87f9a36f156f746",
+   "bytes": 4998
+  },
+  {
    "name": "posts/label-stripped-receipt-cant.en.md",
    "sha256": "09a328c6007ac7fc1a304532eb193eca1f9387419e0a35c8cf785f4854900705",
    "bytes": 3577
@@ -196,12 +206,12 @@
   },
   {
    "name": "rss.xml",
-   "sha256": "99bd122afc325809ed8ec61d8d58e7831b50fe27401a62d286454ca32033b5cb",
-   "bytes": 10694
+   "sha256": "40fae3088cccc6a499fead178c26b63ff496f962868108d3f8a2a9570933f491",
+   "bytes": 11371
   }
  ],
- "head": "6b32bc642384809b0fca3efe517403839398ccdb348f044efcc83592e62edc86",
- "sig": "D0r5IwPJu+BcxavKt3lPSQfGl6Fr1S4VwPUh0vAiFbrTLrikJS1SbtFJciy9eq4enDI4ruIWqDlpeWNAIi4jDw==",
+ "head": "681e1820e5d38b917cf652a4cce68b1b7810a8b0c5f5caa68e1358ddb3135417",
+ "sig": "3Xdhf5vo7vw/j5lPWnl8Tgn8t0KXLQTQ4Y31w3KIs7V8h1OvBqd9Y+HsO0Yc2XLv6mMW8dmoZgEucZkxTKbTCQ==",
  "pubkey": "rnanvciXhNbavJ5lAS1WCA4zyn9YOgPzsuOIwWC1HzI=",
  "fingerprint": "sha256:7a513360730f352a"
 }
