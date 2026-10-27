@@ -23,5 +23,6 @@ jobs:
       - name: Compress images and open a PR
         uses: calibreapp/image-actions@1.1.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          compress-only: true
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          jpegQuality: 85
+          pngQuality: 85
