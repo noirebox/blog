@@ -132,19 +132,32 @@
   function link(p){return (en&&p.en?'en':'fr')+'/'+p.slug}
   function card(p){
     var d=el('a','pcard');d.href=link(p);
-    d.innerHTML=(p.image?'<img src="'+esc(p.image)+'" alt="'+esc(p.image_alt||'')+'">':'')+
+    d.innerHTML=(p.image?'<span class="lz"><img class="lz-w" src="'+esc(p.image)+'" alt="'+esc(p.image_alt||'')+'"></span>':'')+
       '<div class="pbody"><span class="pd">'+p.date+(p.en?' <span class="flag">FR+EN</span>':'')+'</span>'+
       '<h3>'+esc(title(p))+'</h3><p class="pr">'+esc(resume(p).slice(0,150))+(resume(p).length>150?'…':'')+'</p>'+
       '<div class="pt">'+p.themes.map(function(k){return '<span class="badge">'+tl(k)+'</span>'}).join('')+'</div></div>';
     return d;
   }
+  
+  /* lazy images : loader centré + fade-in (helper partagé) */
+  function lzx(root){
+    (root||document).querySelectorAll('img.lz-w').forEach(function(im){
+      im.classList.remove('lz-w');
+      im.loading='lazy'; im.decoding='async';
+      var w=im.parentElement, done=function(){ im.classList.add('in'); if(w&&w.classList.contains('lz')) w.classList.add('done'); };
+      if(im.complete&&im.naturalWidth>0){ done(); return; }
+      im.addEventListener('load',done,{once:true});
+      im.addEventListener('error',function(){ if(w&&w.classList.contains('lz')) w.classList.add('done'); },{once:true});
+    });
+  }
+
   function render(){
     var hero=document.getElementById('hero');
     hero.innerHTML='';hero.style.display=POSTS.length?'grid':'none';
     if(POSTS.length){
       var p=POSTS[0];
       var f=el('div','feat');
-      f.innerHTML=(p.image?'<img src="'+esc(p.image)+'" alt="'+esc(p.image_alt||'')+'">':'')+
+      f.innerHTML=(p.image?'<span class="lz"><img class="lz-w" src="'+esc(p.image)+'" alt="'+esc(p.image_alt||'')+'"></span>':'')+
         '<div class="fbody"><span class="pd" style="font-family:var(--mono);font-size:.7rem;color:var(--muted)">'+p.date+' · '+p.themes.map(tl).join(' · ')+(p.en?' · FR+EN':'')+'</span>'+
         '<h2><a href="'+link(p)+'">'+esc(title(p))+'</a></h2><p class="pres">'+esc(resume(p).slice(0,220))+(resume(p).length>220?'…':'')+'</p>'+
         '<a class="readmore" href="'+link(p)+'">'+(en?'read the post →':'lire l\'article →')+'</a></div>';
@@ -154,7 +167,7 @@
         var side=el('div','fil'),h=el('div','filh');h.textContent=en?'the feed':'le fil des publications';side.appendChild(h);
         rest.forEach(function(r){
           var row=el('div','filrow');
-          var th=r.image?'<img class="rthumb" src="'+esc(r.image)+'" alt="">':'<div class="rthumb brandmark"></div>';
+          var th=r.image?'<span class="lz" style="width:68px;height:68px;flex:none"><img class="lz-w rthumb" src="'+esc(r.image)+'" alt=""></span>':'<div class="rthumb brandmark"></div>';
           row.innerHTML=th+'<div><span class="fd">'+r.date+(r.en?' · FR+EN':'')+'</span><a href="'+link(r)+'">'+esc(title(r))+'</a></div>';
           side.appendChild(row);
         });
@@ -177,6 +190,7 @@
     });
     document.getElementById('sub').innerHTML=en?'The NoireBox team journal: AI agents in production, security, and provable compliance — written by the people who ship the flight recorder. Adding a post = drop a <code>.md</code> and one line in <code>INDEX.md</code>.':'Le journal de l\'équipe NoireBox : les agents IA en production, la sécurité et la conformité prouvable — écrit par ceux qui expédient l\'enregistreur de vol. Ajouter un article = déposer un <code>.md</code> et une ligne dans <code>INDEX.md</code>.';
     applyStatic();applyFoot();
+    lzx(document);
     var h1=document.querySelector('main h1');if(h1)h1.textContent=en?'The logbook.':'Le journal de bord.';
     var dk=document.querySelector('#dernieres .kicker');if(dk)dk.textContent=en?'// latest posts':'// dernières publications';
     var cb=document.querySelector('.ctaband');

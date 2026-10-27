@@ -84,3 +84,12 @@ footer{border-top:1px solid var(--line);margin-top:72px}
   .md pre{padding:14px;font-size:.85rem}
   .foot{font-size:.7rem;padding:20px 16px 30px}
 }
+
+/* images distantes : lazy au scroll + loader centré + fade-in */
+.lz{display:block;position:relative}
+.lz::after{content:"";position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--accent);animation:lzspin .8s linear infinite;z-index:1}
+.lz.done::after{display:none}
+.lz img{opacity:0;transition:opacity .4s ease}
+.lz img.in{opacity:1}
+.md .lz{min-height:140px;background:var(--surface)}
+@keyframes lzspin{to{transform:rotate(360deg)}}
