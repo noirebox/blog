@@ -1,0 +1,27 @@
+name: imgbot — image optimization
+
+# Optimise les images du blog (mozjpeg/pngquant/webp — le moteur d'ImgBot,
+# en action native : pas d'app tierce sur l'org). Ouvre une PR avec les
+# fichiers compressés ; merge = images plus légères, pixels identiques.
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'   # chaque lundi 04:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the blog
+        uses: actions/checkout@v4
+
+      - name: Compress images and open a PR
+        uses: calibreapp/image-actions@1.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          compress-only: true
