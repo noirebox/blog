@@ -30,14 +30,16 @@ jobs:
           find img -type f -name '*.png' -print0 |
             xargs -0 -I{} sh -c 'optipng -o2 -silent "{}" || echo "::warning::optipng failed on {}"'
 
-      - name: Open optimization PR if anything shrank
-        uses: peter-evans/create-pull-request@v6
-        with:
-          commit-message: "imgbot: optimisation sans perte des images"
-          title: "imgbot — images optimisées (sans perte)"
-          body: |
-            Optimisation lossless automatique (jpegoptim --strip-all / optipng) :
-            métadonnées retirées, tables Huffman réoptimisées — **pixels identiques**,
-            poids réduit. Vérifie une vignette au hasard avant de merger.
-          branch: imgbot-optimizations
-          delete-branch: true
+      - name: Commit and push if anything shrank
+        run: |
+          git config user.name "imgbot"
+          git config user.email "noirebox-bot@noirebox.eu"
+          git add img
+          if git diff --cached --quiet; then
+            echo "rien à optimiser — déjà au poids plancher"
+            exit 0
+          fi
+          git commit -m "imgbot: optimisation sans perte des images"
+          git pull --rebase -q origin main
+          git push
+          git diff HEAD~1 HEAD --stat | tail -5
