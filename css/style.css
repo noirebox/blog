@@ -53,7 +53,7 @@ footer{border-top:1px solid var(--line);margin-top:72px}
 .md code{font-family:var(--mono);font-size:.9em;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:1px 6px}
 .md pre{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;overflow-x:auto;margin:0 0 20px}
 .md pre code{background:none;border:none;padding:0;font-size:.92rem;line-height:1.75;color:#c7cec9}
-/* coloration syntaxique — palette maison, sobre */
+/* coloration syntaxique, palette maison, sobre */
 .hljs-keyword,.hljs-selector-tag,.hljs-literal{color:var(--accent)}
 .hljs-string,.hljs-regexp{color:#f0c674}
 .hljs-comment,.hljs-quote{color:var(--muted);font-style:italic}
