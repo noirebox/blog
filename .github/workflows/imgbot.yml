@@ -23,10 +23,12 @@ jobs:
       - name: Install lossless optimizers
         run: sudo apt-get update -qq && sudo apt-get install -y -qq jpegoptim optipng
 
-      - name: Optimize images (lossless)
+      - name: Optimize images (lossless, per-file tolerant)
         run: |
-          find img -type f \( -name '*.jpg' -o -name '*.jpeg' \) -print0 | xargs -0 jpegoptim --strip-all
-          find img -type f -name '*.png' -print0 | xargs -0 optipng -o2 -silent
+          find img -type f \( -name '*.jpg' -o -name '*.jpeg' \) -print0 |
+            xargs -0 -I{} sh -c 'jpegoptim --strip-all "{}" || echo "::warning::jpegoptim failed on {}"'
+          find img -type f -name '*.png' -print0 |
+            xargs -0 -I{} sh -c 'optipng -o2 -silent "{}" || echo "::warning::optipng failed on {}"'
 
       - name: Open optimization PR if anything shrank
         uses: peter-evans/create-pull-request@v6
