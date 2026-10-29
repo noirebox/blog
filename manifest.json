@@ -1,13 +1,13 @@
 {
  "site": "blog.noirebox.eu",
  "format": "seal v1 — SHA-256 chain + Ed25519",
- "built_at": "2026-10-27T17:01:05+00:00",
+ "built_at": "2026-10-29T13:17:36+00:00",
  "genesis": "blog-noirebox-genesis",
  "files": [
   {
    "name": "INDEX.md",
-   "sha256": "b10dd76b8f7eba8a4a5a048bdc71906cdd2516340d039eb70684fbcd1da3272b",
-   "bytes": 672
+   "sha256": "a752a8b9b5fd0aee39c4bd180fff8e8729df7ef75cf02cd25d8efa4aa18f491b",
+   "bytes": 706
   },
   {
    "name": "article.html",
@@ -165,6 +165,16 @@
    "bytes": 5680
   },
   {
+   "name": "posts/product-liability-december-2026.en.md",
+   "sha256": "cfd7c049d2a4076854fb4f729a1f9980001545c899a2abb2cc23d2ceb6304457",
+   "bytes": 4605
+  },
+  {
+   "name": "posts/product-liability-december-2026.fr.md",
+   "sha256": "ac4b6e9104608ffdee23a02d95736efe9bcf8a4076d8c8a77ccfdd4a41196fbd",
+   "bytes": 5428
+  },
+  {
    "name": "posts/prompt-injection-supply-chain.en.md",
    "sha256": "62b9863d5173db3483c078fb90e0befd73b922da3feef6a6560aa18dd0576335",
    "bytes": 3718
@@ -206,12 +216,12 @@
   },
   {
    "name": "rss.xml",
-   "sha256": "40fae3088cccc6a499fead178c26b63ff496f962868108d3f8a2a9570933f491",
-   "bytes": 11371
+   "sha256": "56184302a732f959218442f756b0274c210cb41e7abcacb7aaf7ed93df7da22c",
+   "bytes": 12127
   }
  ],
- "head": "681e1820e5d38b917cf652a4cce68b1b7810a8b0c5f5caa68e1358ddb3135417",
- "sig": "3Xdhf5vo7vw/j5lPWnl8Tgn8t0KXLQTQ4Y31w3KIs7V8h1OvBqd9Y+HsO0Yc2XLv6mMW8dmoZgEucZkxTKbTCQ==",
+ "head": "364c3595aceed4ea05131caf9981409dffe4360499cdf2abe690a9abd5f802c9",
+ "sig": "aFby+DvtDcM6hLNJoJ5X4p1P+YsRz+mPOTsRimOojsSwjO4aFL8p8yGUhez+9a50+ZMqIMAYHYRcpV/w47r8Dw==",
  "pubkey": "rnanvciXhNbavJ5lAS1WCA4zyn9YOgPzsuOIwWC1HzI=",
  "fingerprint": "sha256:7a513360730f352a"
 }

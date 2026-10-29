@@ -3,6 +3,7 @@
 Ordre d'affichage (du plus récent au plus ancien).
 Pour publier : déposez `posts/<slug>.en.md` (+ `.fr.md` si traduit), puis ajoutez le slug ci-dessous.
 
+- product-liability-december-2026
 - iso-24970-logging-standard
 - equivalently-adequate-means
 - omnibus-december-2026
