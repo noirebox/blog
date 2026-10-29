@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La prompt injection est devenue un problème de supply chain — NoireBox blog</title>
+<title>La prompt injection est devenue un problème de supply chain · NoireBox blog</title>
 <meta name="description" content="Vos agents consomment des pages web, des tickets et des mails écrits par des inconnus. La prompt injection est donc une vulnérabilité de dépendance, et comme tout risque supply chain, ça se gère avec des catalogues d&#x27;attaques rejoués et des preuves, pas avec de l&#x27;espoir.">
 <link rel="canonical" href="https://blog.noirebox.eu/fr/prompt-injection-supply-chain">
 <link rel="alternate" hreflang="fr" href="https://blog.noirebox.eu/en/prompt-injection-supply-chain">
@@ -100,7 +100,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
 
   <div class="byline">
     <div class="avatar"></div>
-    <div class="binfo"><b>Sam LABBE</b><span id="brole">S//ABB — indépendant</span></div>
+    <div class="binfo"><b>Sam LABBE</b><span id="brole">S//ABB · indépendant</span></div>
     <div class="bmeta" id="bmeta"></div>
   </div>
 
@@ -129,7 +129,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
     <div class="avatar"></div>
     <div class="ab">
       <b>Sam LABBE</b>
-      <span data-bio="Lead developer (2004 →). S//ABB · NoireBox · navette — des outils qui prouvent ce qu'ils font.">Lead developer since 2004. S//ABB · NoireBox · navette — tools that prove what they do.</span>
+      <span data-bio="Lead developer (2004 →). S//ABB · NoireBox · navette · des outils qui prouvent ce qu'ils font.">Lead developer since 2004. S//ABB · NoireBox · navette · tools that prove what they do.</span>
     </div>
     <div class="al">
       <a href="https://slabb.dev" target="_blank" rel="noopener">slabb.dev</a>
@@ -194,13 +194,13 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
     document.documentElement.lang=lang;
     var t=(lang==='en'&&c.fm.titre_en)?c.fm.titre_en:c.fm.titre;
     var res=(lang==='en'&&c.fm.resume_en)?c.fm.resume_en:c.fm.resume;
-    document.title=t+' — NoireBox blog';
+    document.title=t+' · NoireBox blog';
     var cl=document.querySelector('link[rel="canonical"]')||document.createElement('link');cl.rel='canonical';cl.href='https://blog.noirebox.eu/posts/'+slug;document.head.appendChild(cl);
     document.getElementById('cats').innerHTML=(c.fm.themes||'').split(',').map(function(k){return '<span class="badge">'+tl(k.trim())+'</span>'}).join('');
     document.getElementById('titre').textContent=t;
     document.getElementById('resume').textContent=res||'';
     var mdd=document.querySelector('meta[name="description"]');if(mdd)mdd.setAttribute('content',res||'');
-    document.getElementById('brole').textContent=langs==='en'?'S//ABB — independent':'S//ABB — indépendant';
+    document.getElementById('brole').textContent=langs==='en'?'S//ABB · independent':'S//ABB · indépendant';
     var words=c.body.split(/\s+/).length, mins=Math.max(1,Math.round(words/200));
     var d=new Intl.DateTimeFormat(lang==='en'?'en-GB':'fr-FR',{day:'numeric',month:'long',year:'numeric'}).format(new Date(c.fm.date||Date.now()));
     document.getElementById('bmeta').innerHTML='<span>'+d+'</span><span>'+mins+' min '+L('de lecture','read')+'</span>'+
@@ -225,7 +225,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
     document.getElementById('shCopy').textContent='copy link';
     document.getElementById('relK').textContent=L('sur le même sujet','on the same topic');
     var ab=document.querySelector('.ab span');
-    if(ab)ab.textContent=L('Lead developer (2004 →). S//ABB · NoireBox · navette — des outils qui prouvent ce qu\'ils font.','Lead developer since 2004. S//ABB · NoireBox · navette — tools that prove what they do.');
+    if(ab)ab.textContent=L('Lead developer (2004 →). S//ABB · NoireBox · navette · des outils qui prouvent ce qu\'ils font.','Lead developer since 2004. S//ABB · NoireBox · navette · tools that prove what they do.');
     var ft=document.getElementById('footTxt');
     if(ft)ft.innerHTML='<a href="legal.html">legal &amp; privacy</a> · '+L('statique, zéro tracking','static, zero tracking')+' · © 2026 Sam Labbe';
     var u=location.href;
@@ -279,7 +279,7 @@ h1{font-size:clamp(1.9rem,4.6vw,2.9rem);line-height:1.12}
     ['byline','.share'].forEach(function(sel){var n=document.querySelector(sel);if(n)n.style.display='none'});
     var hw=document.getElementById('heroWrap');if(hw)hw.style.display='none';
     document.getElementById('titre').textContent='Post not found';
-    document.getElementById('resume').textContent=L('Cette adresse ne correspond à aucun article publié — il a peut-être été retiré, déplacé, ou pas encore traduit.','This address matches no published post — it may have been removed, moved, or not translated yet.');
+    document.getElementById('resume').textContent=L('Cette adresse ne correspond à aucun article publié · il a peut-être été retiré, déplacé, ou pas encore traduit.','This address matches no published post · it may have been removed, moved, or not translated yet.');
     document.getElementById('content').innerHTML='<p><a class="back" href="index.html">'+L('← retour au blog','← back to the blog')+'</a> &nbsp; <a class="back" href="https://slabb.dev">'+L('← le site','← the site')+'</a></p>';
     document.getElementById('back').style.display='none';
   });

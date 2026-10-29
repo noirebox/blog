@@ -1,7 +1,7 @@
 {
  "site": "blog.noirebox.eu",
- "format": "seal v1 — SHA-256 chain + Ed25519",
- "built_at": "2026-10-29T13:35:44+00:00",
+ "format": "seal v1 · SHA-256 chain + Ed25519",
+ "built_at": "2026-10-29T13:39:14+00:00",
  "genesis": "blog-noirebox-genesis",
  "files": [
   {
@@ -11,18 +11,18 @@
   },
   {
    "name": "article.html",
-   "sha256": "7f2d3809b97a02c35a028b5440688ce71ad8fd9e8213511b6c1edc4d628fe473",
-   "bytes": 18486
+   "sha256": "da658c54f9895422750fd04fb1b449fd6d1f16e98ef09c5a502a527b449e591b",
+   "bytes": 18475
   },
   {
    "name": "index.html",
-   "sha256": "df06d259000dc003bcbdee57174e6280f6964e1d77efdef2285114340e0398be",
-   "bytes": 19339
+   "sha256": "9323ee38c0ace8d069dbbea9a589ae16a8c9e52b45088bc958077cc642419f45",
+   "bytes": 19327
   },
   {
    "name": "legal.html",
-   "sha256": "8fd812c7a0d640785ef384761fe6a37cc266477854a26a134d99310287dc82e5",
-   "bytes": 5378
+   "sha256": "3464560b61d557fc2e28fd34198229c31493c90ca504e3d0cb469098d560aa82",
+   "bytes": 5344
   },
   {
    "name": "posts/chatbot-art50-production.en.md",
@@ -216,12 +216,12 @@
   },
   {
    "name": "rss.xml",
-   "sha256": "5308484508ff7455857991361593fe1b0b28daeadf153f672ae0aa179fa7f0df",
-   "bytes": 12060
+   "sha256": "dd2c432dd9c1d34b842d5147d799f8ea20c40a32be7fbbf136e7241aadc1905d",
+   "bytes": 12058
   }
  ],
- "head": "f422521bb2bfd3a2026b734b2c5041915b8e69da74053321a87d665b23b0a0a3",
- "sig": "Lz5iYRD5WAMCYVgOjcGzMoipaXRFpjQ1mD4267660gVv1U2RGUUyfxcUI+GaKlHiU8KUX7B3V6ESSIp8w0mdBg==",
+ "head": "47a7f0bc01f1cef14a8d50076f8033ef42eb3f1fcdc6e3214761bd71e050a7d4",
+ "sig": "4Jw4HdMRQHZlrrDDZI2hIfOG5euH1NSugzm7d6pGwLSrti6fieJr1l50Fs6upVZLNzwiEV7DHu1bmu9xpfp8BA==",
  "pubkey": "rnanvciXhNbavJ5lAS1WCA4zyn9YOgPzsuOIwWC1HzI=",
  "fingerprint": "sha256:7a513360730f352a"
 }

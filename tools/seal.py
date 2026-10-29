@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""seal.py — scelle le blog : SHA-256 par fichier, chaîne, signature Ed25519.
+"""seal.py · scelle le blog : SHA-256 par fichier, chaîne, signature Ed25519.
 Usage : python3 tools/seal.py [--verify]"""
 import base64, hashlib, json, pathlib, sys, datetime
 
@@ -97,7 +97,7 @@ def main():
     if not KEY.exists():
         import os
         KEY.write_bytes(os.urandom(32)); os.chmod(KEY, 0o600)
-        print('clé Ed25519 générée → keys/blog-seal.key (0600 — jamais committée)')
+        print('clé Ed25519 générée → keys/blog-seal.key (0600 · jamais committée)')
     sk = KEY.read_bytes(); pk = publickey(sk)
 
     if '--verify' in sys.argv:
@@ -116,17 +116,17 @@ def main():
         sig_ok = verify(base64.b64decode(man['pubkey']), man['head'].encode(), base64.b64decode(man['sig']))
         ok = ok and sig_ok
         print(f"chaîne {'PASS' if chain_ok else 'FAIL'} · signature {'PASS' if sig_ok else 'FAIL'}")
-        print('VERDICT :', 'INTACT — rien n\'a bougé depuis le dernier scellement.' if ok else 'COMPROMIS ou modifié depuis le dernier scellement.')
+        print('VERDICT :', 'INTACT · rien n\'a bougé depuis le dernier scellement.' if ok else 'COMPROMIS ou modifié depuis le dernier scellement.')
         sys.exit(0 if ok else 1)
 
     sig = signature(sk, head.encode())
     assert verify(pk, head.encode(), sig)
-    man = {'site': 'blog.noirebox.eu', 'format': 'seal v1 — SHA-256 chain + Ed25519',
+    man = {'site': 'blog.noirebox.eu', 'format': 'seal v1 · SHA-256 chain + Ed25519',
            'built_at': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
            'genesis': GENESIS, 'files': entries, 'head': head,
            'sig': base64.b64encode(sig).decode(), 'pubkey': base64.b64encode(pk).decode(),
            'fingerprint': 'sha256:' + sha(pk)[:16]}
     (ROOT / 'manifest.json').write_text(json.dumps(man, indent=1, ensure_ascii=False) + '\n')
-    print(f"scellé — head {head[:16]}…  fingerprint {man['fingerprint']}  ({len(entries)} fichiers)")
+    print(f"scellé · head {head[:16]}…  fingerprint {man['fingerprint']}  ({len(entries)} fichiers)")
 
 main()

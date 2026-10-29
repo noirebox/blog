@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NoireBox blog — AI agents, security &amp; proof</title>
-<meta name="description" content="NoireBox blog — le blog de Sam Labbe : agents IA, sécurité &amp; preuve. EN d'abord, FR au fil des traductions.">
+<title>NoireBox blog · AI agents, security &amp; proof</title>
+<meta name="description" content="NoireBox blog · le blog de Sam Labbe : agents IA, sécurité &amp; preuve. EN d'abord, FR au fil des traductions.">
 <link rel="icon" type="image/png" href="img/noirebox-icon.png">
 <link href="css/style.css" rel="stylesheet">
 <style>
@@ -54,11 +54,11 @@
 </style>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NoireBox blog">
-<meta property="og:title" content="NoireBox blog — agents IA, sécurité &amp; preuve">
+<meta property="og:title" content="NoireBox blog · agents IA, sécurité &amp; preuve">
 <meta property="og:description" content="Le blog de Sam Labbe : agents IA en production, sécurité offensive, preuve de conformité.">
 <meta property="og:url" content="https://blog.noirebox.eu/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NoireBox blog — agents IA, sécurité &amp; preuve">
+<meta name="twitter:title" content="NoireBox blog · agents IA, sécurité &amp; preuve">
 <meta name="twitter:description" content="Le blog de Sam Labbe : agents IA, sécurité, preuve.">
 </head>
 <body>
@@ -76,7 +76,7 @@
 <main class="wrap" style="padding-top:40px">
   <p class="kicker" data-fr="// agents ia · sécurité · preuve">// ai agents · security · proof</p>
   <h1 data-fr="Le journal de bord.">The logbook.</h1>
-  <p class="sub" id="sub">The NoireBox team journal: AI agents in production, security, and provable compliance — written by the people who ship the flight recorder. Adding a post = drop a <code>.md</code> and one line in <code>INDEX.md</code>.</p>
+  <p class="sub" id="sub">The NoireBox team journal: AI agents in production, security, and provable compliance · written by the people who ship the flight recorder. Adding a post = drop a <code>.md</code> and one line in <code>INDEX.md</code>.</p>
 
   <div class="hero" id="hero" style="display:none"></div>
   <div class="tbar" id="tbar" style="display:none"></div>
@@ -88,7 +88,7 @@
 
   <div class="ctaband">
     <div>
-      <b data-fr="Ce blog fait partie de NoireBox — le projet qui prouve ce qu'il fait.">This blog is part of NoireBox — the project that proves what it does.</b>
+      <b data-fr="Ce blog fait partie de NoireBox · le projet qui prouve ce qu'il fait.">This blog is part of NoireBox · the project that proves what it does.</b>
       <p data-fr="Pages scellées, un fil chaîné par hash, et un bench public. RSS si vous préférez les machines.">Sealed pages, a hash-chained feed, and a public benchmark. RSS if you prefer machines.</p>
     </div>
     <div class="cb">
@@ -184,18 +184,18 @@
     Object.keys(counts).forEach(function(k){
       var posts=POSTS.filter(function(p){return p.themes[0]===k});
       var sec=el('section','tsec');sec.id='theme-'+k;
-      sec.innerHTML='<p class="kicker">// '+tl(k).toLowerCase()+' — '+posts.length+(en?' posts':' articles')+'</p>';
+      sec.innerHTML='<p class="kicker">// '+tl(k).toLowerCase()+' · '+posts.length+(en?' posts':' articles')+'</p>';
       var g=el('div','cards');posts.forEach(function(p){g.appendChild(card(p))});sec.appendChild(g);
       ts.appendChild(sec);
     });
-    document.getElementById('sub').innerHTML=en?'The NoireBox team journal: AI agents in production, security, and provable compliance — written by the people who ship the flight recorder. Adding a post = drop a <code>.md</code> and one line in <code>INDEX.md</code>.':'Le journal de l\'équipe NoireBox : les agents IA en production, la sécurité et la conformité prouvable — écrit par ceux qui expédient l\'enregistreur de vol. Ajouter un article = déposer un <code>.md</code> et une ligne dans <code>INDEX.md</code>.';
+    document.getElementById('sub').innerHTML=en?'The NoireBox team journal: AI agents in production, security, and provable compliance · written by the people who ship the flight recorder. Adding a post = drop a <code>.md</code> and one line in <code>INDEX.md</code>.':'Le journal de l\'équipe NoireBox : les agents IA en production, la sécurité et la conformité prouvable · écrit par ceux qui expédient l\'enregistreur de vol. Ajouter un article = déposer un <code>.md</code> et une ligne dans <code>INDEX.md</code>.';
     applyStatic();applyFoot();
     lzx(document);
     var h1=document.querySelector('main h1');if(h1)h1.textContent=en?'The logbook.':'Le journal de bord.';
     var dk=document.querySelector('#dernieres .kicker');if(dk)dk.textContent=en?'// latest posts':'// dernières publications';
     var cb=document.querySelector('.ctaband');
     if(cb){var bb=cb.querySelector('b'),cp=cb.querySelector('p'),ch=cb.querySelector('.hot');
-      if(bb)bb.textContent=en?'This blog is part of NoireBox — the project that proves what it does.':'Ce blog fait partie de NoireBox — le projet qui prouve ce qu\'il fait.';
+      if(bb)bb.textContent=en?'This blog is part of NoireBox · the project that proves what it does.':'Ce blog fait partie de NoireBox · le projet qui prouve ce qu\'il fait.';
       if(cp)cp.textContent=en?'Sealed pages, a hash-chained feed, and a public benchmark. RSS if you prefer machines.':'Pages scellées, un flux chaîné par hachage et un bench public. RSS si vous préférez les machines.';
       if(ch)ch.textContent=en?'the docs →':'les docs →';}
   }

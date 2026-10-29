@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Génère depuis INDEX.md, pour chaque article :
-  - /fr/<slug>.html et /en/<slug>.html — page complète : title réel, meta description,
+  - /fr/<slug>.html et /en/<slug>.html · page complète : title réel, meta description,
     canonical, hreflang, Open Graph, Twitter card et JSON-LD Article injectés ;
-  - /posts/<slug>.html — redirection vers la version française ;
+  - /posts/<slug>.html · redirection vers la version française ;
   - sitemap.xml (alternates + lastmod) et rss.xml.
 Lancé localement ou par l'action GitHub à chaque push."""
 import datetime, email.utils, json, pathlib, html as _h
@@ -55,7 +55,7 @@ def head(lang, slug, fr, en):
               "author": {"@type": "Person", "name": "Sam Labbe", "url": "https://slabb.dev"},
               "publisher": {"@type": "Person", "name": "Sam Labbe"}}
     if image: jsonld["image"] = [image]
-    head = (f'<title>{_h.escape(title)} — {SITE}</title>\n'
+    head = (f'<title>{_h.escape(title)} · {SITE}</title>\n'
             f'<meta name="description" content="{_h.escape(desc)}">\n'
             f'<link rel="canonical" href="{url}">\n{alt}'
             f'<meta property="og:type" content="article">\n'
@@ -80,7 +80,7 @@ for p in posts:
     slug = p['slug']; fr = p['fr']; en = p['en']
     has_en = en is not None
     for lang in (['fr', 'en'] if has_en else ['fr']):
-        page = tpl.replace('<title>Article — NoireBox blog</title>',
+        page = tpl.replace('<title>Article · NoireBox blog</title>',
                            head(lang, slug, fr, en))
         d = root / lang
         d.mkdir(exist_ok=True)
@@ -107,8 +107,8 @@ sm += '</urlset>\n'
 (root / 'sitemap.xml').write_text(sm)
 
 rss = '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>\n'
-rss += f'<title>{SITE} — Sam Labbe</title>\n<link>https://blog.slabb.dev</link>\n'
-rss += '<description>Agents IA, sécurité &amp; preuve — EN first, FR as translations land</description>\n<language>fr</language>\n'
+rss += f'<title>{SITE} · Sam Labbe</title>\n<link>https://blog.slabb.dev</link>\n'
+rss += '<description>Agents IA, sécurité &amp; preuve · EN first, FR as translations land</description>\n<language>fr</language>\n'
 for p in posts:
     fm = p['fr']
     rss += (f'<item><title>{_h.escape(fm.get("titre", p["slug"]))}</title>'

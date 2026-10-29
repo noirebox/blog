@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
-<title>NoireBox blog — Sam Labbe</title>
+<title>NoireBox blog · Sam Labbe</title>
 <link>https://blog.slabb.dev</link>
-<description>Agents IA, sécurité &amp; preuve — EN first, FR as translations land</description>
+<description>Agents IA, sécurité &amp; preuve · EN first, FR as translations land</description>
 <language>fr</language>
 <item><title>Dans six semaines, votre IA devient un produit à responsabilité stricte, et le tribunal pourra ordonner la divulgation de vos logs</title><link>https://blog.noirebox.eu/fr/product-liability-december-2026</link><guid>https://blog.noirebox.eu/fr/product-liability-december-2026</guid><description>Pendant que tout le monde regarde les dates de décembre de l&#x27;AI Act, la nouvelle directive responsabilité produit (UE) 2024/2853 s&#x27;applique silencieusement le 9 décembre 2026 : logiciel et systèmes IA sont désormais des « produits », la responsabilité est stricte sur toute la chaîne, et les tribunaux peuvent ordonner la divulgation de vos preuves.</description><pubDate>Thu, 29 Oct 2026 00:00:00 -0000</pubDate></item>
 <item><title>Le standard de logging vient de trouver sa forme : EN ISO/IEC 24970 est en projet final</title><link>https://blog.noirebox.eu/fr/iso-24970-logging-standard</link><guid>https://blog.noirebox.eu/fr/iso-24970-logging-standard</guid><description>Le standard harmonisé pour la tenue de registres de l&#x27;article 12, journalisation des systèmes IA, avec modèle d&#x27;information et exigences d&#x27;intégrité, est passé en projet final (FprEN) en route vers EN ISO/IEC 24970:2026. Ce que ça change pour votre échéance du 2 décembre 2027, et le trou honnête qu&#x27;on vous doit.</description><pubDate>Fri, 23 Oct 2026 00:00:00 -0000</pubDate></item>
