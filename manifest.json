@@ -1,7 +1,7 @@
 {
  "site": "blog.noirebox.eu",
  "format": "seal v1 — SHA-256 chain + Ed25519",
- "built_at": "2026-10-29T13:17:36+00:00",
+ "built_at": "2026-10-29T13:35:44+00:00",
  "genesis": "blog-noirebox-genesis",
  "files": [
   {
@@ -26,202 +26,202 @@
   },
   {
    "name": "posts/chatbot-art50-production.en.md",
-   "sha256": "7c2fd9059666ef98aee745501acf0e21c5a0a00575cc131c3f583ebea7adcf3a",
-   "bytes": 3686
+   "sha256": "54008121071ab74ec93c62a69893449a0d178651a71ccbf37a04ecf777294a50",
+   "bytes": 3644
   },
   {
    "name": "posts/chatbot-art50-production.fr.md",
-   "sha256": "e6faa574a4f4f6796c41537c8ebe3db3714d65ab1d65c146181fa869b4b42e25",
-   "bytes": 4228
+   "sha256": "e9daf65825689cbe1e18658668f89f0daca000959dc46203335df225ac461d3c",
+   "bytes": 4187
   },
   {
    "name": "posts/did-it-happen-reconciliation.en.md",
-   "sha256": "c212f3cabbc253d9d6e49891ad99702dec60310a7fcd1083b02f60cb145b562e",
-   "bytes": 3210
+   "sha256": "00353fbc114579646f06ad9d7111265fd818c6a76fc15bba3654985986bfce18",
+   "bytes": 3174
   },
   {
    "name": "posts/did-it-happen-reconciliation.fr.md",
-   "sha256": "049b94d355290f565046afa3e6bb9b71cc2b24170c285a3d9417ad5037b3a3cf",
-   "bytes": 3784
+   "sha256": "c35cacaa263472a8893bfc8fbf70c03919615ec98bd027f7bdc2312791db6048",
+   "bytes": 3748
   },
   {
    "name": "posts/dpia-fria-one-meeting.en.md",
-   "sha256": "c90e3b8c4a5b1fe0a2a28ff2262619f1bb2023f36158be4d0925ab56c970e323",
-   "bytes": 3685
+   "sha256": "89364003f3e29488e93ea1f00c77db95927954a0d3d7a95045273367cee7d70a",
+   "bytes": 3655
   },
   {
    "name": "posts/dpia-fria-one-meeting.fr.md",
-   "sha256": "9b55f254e2a802d67f037333d4db3e495f085ea7f77aa5c68211da67d9827fca",
-   "bytes": 4369
+   "sha256": "0b52e55c67aa147a152f32980c6b13d97364e965cc598c6c350f6195e92a810a",
+   "bytes": 4339
   },
   {
    "name": "posts/enforcement-vs-evidence.en.md",
-   "sha256": "b2e02a2bd8098c4a9f09fd6b0c9a355d4b8f21658f5381eae9d24f439bc5bb87",
-   "bytes": 3808
+   "sha256": "4af3f822bb2d47ab0bef408f23cb3b0293ecb7c3c193dd1581fba5ea796b5219",
+   "bytes": 3772
   },
   {
    "name": "posts/enforcement-vs-evidence.fr.md",
-   "sha256": "afaf79b4621f5b26be87e5073e1576d96cf3990d87a7b74c43b4ba47f967cd2e",
-   "bytes": 4272
+   "sha256": "628af2965965e3817ad50bb6edc4ce6e72daade89b3880a3bcd9ecd1b9cdc283",
+   "bytes": 4236
   },
   {
    "name": "posts/equivalently-adequate-means.en.md",
-   "sha256": "722c1e5afb95c2098689ec7120af70dd9325690b070c9d0d204b918691353021",
-   "bytes": 5549
+   "sha256": "3cebf394456dabaf9631ea65436e18fef437b0e47217cecb588d6dd1875360da",
+   "bytes": 5498
   },
   {
    "name": "posts/equivalently-adequate-means.fr.md",
-   "sha256": "7bc3f63d183f96f1d8352abf02710ce3064871d06fae12f7bec22cd3772f0829",
-   "bytes": 6470
+   "sha256": "5c0d241293dcfb30b8362a12750deed908ee3c1b5336cc0d7eef7af176adfe51",
+   "bytes": 6419
   },
   {
    "name": "posts/eu-green-claims-ban.en.md",
-   "sha256": "ebc9e640fa992370d7685c8a926a93188155aecceef9bc4f34e57608d4249339",
-   "bytes": 7552
+   "sha256": "bed7c13d53592170ecedf31afbac88b03fbd4e5c8eed85ec635081b09f4a52ce",
+   "bytes": 7501
   },
   {
    "name": "posts/eu-green-claims-ban.fr.md",
-   "sha256": "978ee95262311b969b02464ab62cf18c8c839c92575e2f1a85554ef8c504c645",
-   "bytes": 8800
+   "sha256": "dae34c6fbb00e6f797af44b05a7fdf70351dd50e6af000b77b6352c2fc1d5bc9",
+   "bytes": 8749
   },
   {
    "name": "posts/execution-time-identity.en.md",
-   "sha256": "31b49225b4d6904d847e2fff7bb832be048ab620470ce6b701c5cffabf3f06eb",
-   "bytes": 3945
+   "sha256": "6df3f7ebc19e5a2877bfc3741c3a74358f1ec60df54d4e745331e5a5a4f6c540",
+   "bytes": 3909
   },
   {
    "name": "posts/execution-time-identity.fr.md",
-   "sha256": "8d38f88ed54b13b02a5da0bae7e08d28cd6d6aa0c55a928ab34bac3c31140b8b",
-   "bytes": 4553
+   "sha256": "dfb17defa2fde9ffa653cc089cb79f81086774f9295ef985305d0c0cc641d5fc",
+   "bytes": 4517
   },
   {
    "name": "posts/gpai-code-deadlines.en.md",
-   "sha256": "5a700c69e5b859a24bca73ebab83c4806b199267b15e8b5de85030c76de21405",
-   "bytes": 3306
+   "sha256": "6cf86f26ceecb31b39f7fcb66953660eb670aaa5e7903dcf47cf94ff11440c7a",
+   "bytes": 3279
   },
   {
    "name": "posts/gpai-code-deadlines.fr.md",
-   "sha256": "77749535d75b4dddd21249fd82cadabb583747663ed9990323f07cf732097af1",
-   "bytes": 3874
+   "sha256": "1332237aa6b8bda9753acdd192b67b5fe35b36443a4627b617cde3e51931ab39",
+   "bytes": 3847
   },
   {
    "name": "posts/iso-24970-logging-standard.en.md",
-   "sha256": "aade9e0aa65d43948167214b06287bd1d71f01045046cf2b7237b17a96a0a428",
-   "bytes": 4332
+   "sha256": "4a9ee0b8d8d6ae072f2646daa00cd514523633db4942c8eeece593346bfe1ec4",
+   "bytes": 4281
   },
   {
    "name": "posts/iso-24970-logging-standard.fr.md",
-   "sha256": "fbddc8ffba3c5a9c56388b09431d73bbb545ffdd698bf146f87f9a36f156f746",
-   "bytes": 4998
+   "sha256": "d3a0a0bc4e1bcc92f217eaa07d8e34d331c1ef81ab1acb424763bcd209290e1f",
+   "bytes": 4944
   },
   {
    "name": "posts/label-stripped-receipt-cant.en.md",
-   "sha256": "09a328c6007ac7fc1a304532eb193eca1f9387419e0a35c8cf785f4854900705",
-   "bytes": 3577
+   "sha256": "aaac1c348f7907bc458721dff729e7b8bd50864ee0f858b78554006dcd2d4eaf",
+   "bytes": 3544
   },
   {
    "name": "posts/label-stripped-receipt-cant.fr.md",
-   "sha256": "0c2de24929196029833300516cab3b853590892a2a9a0ac1c6c5871554b346d4",
-   "bytes": 3945
+   "sha256": "af5c6ab26762099f274c626f3eafedc94c35113cd7ac414dbb893105dae9f01c",
+   "bytes": 3912
   },
   {
    "name": "posts/logging-90-day-plan.en.md",
-   "sha256": "17a5a7b1986f922750ef85f2f2403097bcfb44c3f4774b37f44f76dbb40de35c",
-   "bytes": 3664
+   "sha256": "075521ac50596acd91429ecd613250edde084b8f9080d1a233dde95b853885c2",
+   "bytes": 3628
   },
   {
    "name": "posts/logging-90-day-plan.fr.md",
-   "sha256": "467ebcce45d3099b8424ca3cbce56c0887f263b15a32735610e00cbdaefaecd3",
-   "bytes": 4423
+   "sha256": "4fdc1d273a82c2becc5a6806ad8f3de1aac65c1b56873c66b1fea5c93b3740a2",
+   "bytes": 4390
   },
   {
    "name": "posts/logs-are-not-evidence.en.md",
-   "sha256": "eedc31a46a61e96963aeaf49748391682d2e4950e212f2a8098a7452a44ddcf1",
-   "bytes": 3331
+   "sha256": "82d000223edf5e336b4b87e6a07a21ee6eb6ca039343a11335f8f6313cfc83f2",
+   "bytes": 3292
   },
   {
    "name": "posts/logs-are-not-evidence.fr.md",
-   "sha256": "7c67025c23553fbc097c36fc364d29cca4f0126669eb93128faf3c9d170c1113",
-   "bytes": 3677
+   "sha256": "9df1db986fc0bde9e7986131540c7d7fdc3bf47b05c0ce32661ff388711334b4",
+   "bytes": 3641
   },
   {
    "name": "posts/omnibus-december-2026.en.md",
-   "sha256": "09186d013f35ec05f9e9a60d1214b7619d72fad49aae6c52a21c788fb740da00",
-   "bytes": 3855
+   "sha256": "87f410ab289359ed3f97083c7b917017a66417255fe3e67b5e4369239e98f87f",
+   "bytes": 3822
   },
   {
    "name": "posts/omnibus-december-2026.fr.md",
-   "sha256": "849ace21fd5d5f110e66de25d823e2019dd25585a78f8b2807b3f03cacd09a14",
-   "bytes": 4125
+   "sha256": "c5eebb96a5e7e411edb61db3a9f43a518601567d5dfdc13880c8c81db1f0b1a3",
+   "bytes": 4093
   },
   {
    "name": "posts/one-sql-update-defense.en.md",
-   "sha256": "d696390d802db2eb3b560aa1dca381a8ba372d969013973cd894084dc8d9c771",
-   "bytes": 5242
+   "sha256": "50ef9464d1f13b8fa935113c2453f8fef3cd2ec5cfa4273e6eefb5f9022a0a44",
+   "bytes": 5194
   },
   {
    "name": "posts/one-sql-update-defense.fr.md",
-   "sha256": "480302c253e94feb444b0156fd4c5d6ee6f8f1b2829f29672fe3e80d043dbdc2",
-   "bytes": 5680
+   "sha256": "a8290df993ad3824840c9e6107cdec74b5250daa4f301e7f99030bbc98525e75",
+   "bytes": 5635
   },
   {
    "name": "posts/product-liability-december-2026.en.md",
-   "sha256": "cfd7c049d2a4076854fb4f729a1f9980001545c899a2abb2cc23d2ceb6304457",
-   "bytes": 4605
+   "sha256": "586c6980131d7dd66b02ac647d5a4a14a0365ab63ff589fb56af5d8634775e3d",
+   "bytes": 4563
   },
   {
    "name": "posts/product-liability-december-2026.fr.md",
-   "sha256": "ac4b6e9104608ffdee23a02d95736efe9bcf8a4076d8c8a77ccfdd4a41196fbd",
-   "bytes": 5428
+   "sha256": "2043ae40432069ca30caa9f4e16acc4a433d910bfb887898895a7bff662ec459",
+   "bytes": 5386
   },
   {
    "name": "posts/prompt-injection-supply-chain.en.md",
-   "sha256": "62b9863d5173db3483c078fb90e0befd73b922da3feef6a6560aa18dd0576335",
-   "bytes": 3718
+   "sha256": "552694071773ef0541beab14705696b4edbaef304884af4da08d3c9d1122f490",
+   "bytes": 3670
   },
   {
    "name": "posts/prompt-injection-supply-chain.fr.md",
-   "sha256": "d3aa2e4802bddbf7137b1a9fdbab78b9a6f2c75fd74fd58e7531a6a0c7ac7e14",
-   "bytes": 4323
+   "sha256": "083eb36c549e9ea2c4cd1981cca04efbcb6bc9825609f4f61de49c80f0509884",
+   "bytes": 4275
   },
   {
    "name": "posts/proving-what-agent-was-never-told.en.md",
-   "sha256": "edc5fb5e773e26f64f6419edb955594cba1b5cdf83976648852e0b723359b76d",
-   "bytes": 3652
+   "sha256": "607d6e3c97fae533f43188873f687623be7da5f5f0a81532c6632eb207bc2ff8",
+   "bytes": 3610
   },
   {
    "name": "posts/proving-what-agent-was-never-told.fr.md",
-   "sha256": "81cebc3e8ac73be3bc7cdb70f42a9d6c4cf6429877edd7a0f54e9a7f1a65917b",
-   "bytes": 4217
+   "sha256": "47b0b53f4e5276759feb7aca4c594f760effc7403071d34fd88392f84c9c9dd7",
+   "bytes": 4171
   },
   {
    "name": "posts/six-months-of-logs.en.md",
-   "sha256": "baad3af448c4e35fe5e12cb8ba4569140f74c3cd08217d8c2a13e4c0eeb1c647",
-   "bytes": 3485
+   "sha256": "7ae2be5837dd7c6ec380891abca9f9683510bd079e1dee1c60a7453a1a608d1d",
+   "bytes": 3461
   },
   {
    "name": "posts/six-months-of-logs.fr.md",
-   "sha256": "0384d4c414294e4747d8fb5fabf0abb60cb246e245d2c5a4f3a37ebae79a581d",
-   "bytes": 4143
+   "sha256": "04ed4ac24ba0bf9783896f7da6b48c8586a15abb87b145f147af5b20fb00f722",
+   "bytes": 4119
   },
   {
    "name": "posts/twenty-four-mutants.en.md",
-   "sha256": "b6e95880bdeb13ea7f2c70ac7027271af8779e4f8169cf1c81355597a48420e1",
-   "bytes": 3120
+   "sha256": "35f68022a4a978ed5c4090590088a900e3db5173972ccda3030c5a234263061b",
+   "bytes": 3093
   },
   {
    "name": "posts/twenty-four-mutants.fr.md",
-   "sha256": "4866b39272277ead5eef00d67bd1b5e8e588e6a44bfda505e6fb6bc16b467252",
-   "bytes": 3710
+   "sha256": "28f104074f06056ad7e03942f359791c1e3de260310ccaff606edbf34bf43bd5",
+   "bytes": 3683
   },
   {
    "name": "rss.xml",
-   "sha256": "56184302a732f959218442f756b0274c210cb41e7abcacb7aaf7ed93df7da22c",
-   "bytes": 12127
+   "sha256": "5308484508ff7455857991361593fe1b0b28daeadf153f672ae0aa179fa7f0df",
+   "bytes": 12060
   }
  ],
- "head": "364c3595aceed4ea05131caf9981409dffe4360499cdf2abe690a9abd5f802c9",
- "sig": "aFby+DvtDcM6hLNJoJ5X4p1P+YsRz+mPOTsRimOojsSwjO4aFL8p8yGUhez+9a50+ZMqIMAYHYRcpV/w47r8Dw==",
+ "head": "f422521bb2bfd3a2026b734b2c5041915b8e69da74053321a87d665b23b0a0a3",
+ "sig": "Lz5iYRD5WAMCYVgOjcGzMoipaXRFpjQ1mD4267660gVv1U2RGUUyfxcUI+GaKlHiU8KUX7B3V6ESSIp8w0mdBg==",
  "pubkey": "rnanvciXhNbavJ5lAS1WCA4zyn9YOgPzsuOIwWC1HzI=",
  "fingerprint": "sha256:7a513360730f352a"
 }
