@@ -1,8 +1,8 @@
 name: imgbot — image optimization
 
-# Optimise les images du blog (mozjpeg/pngquant/webp — le moteur d'ImgBot,
-# en action native : pas d'app tierce sur l'org). Ouvre une PR avec les
-# fichiers compressés ; merge = images plus légères, pixels identiques.
+# Optimisation SANS PERTE des images du blog (jpegoptim/optipng : strip
+# métadonnées + Huffman, pixels identiques). Tourne sur main (cron + manuel)
+# et ouvre une PR avec les fichiers allégés ; merge = blog plus rapide.
 
 on:
   schedule:
@@ -20,9 +20,22 @@ jobs:
       - name: Check out the blog
         uses: actions/checkout@v4
 
-      - name: Compress images and open a PR
-        uses: calibreapp/image-actions@1.1.0
+      - name: Install lossless optimizers
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq jpegoptim optipng
+
+      - name: Optimize images (lossless)
+        run: |
+          find img -type f \( -name '*.jpg' -o -name '*.jpeg' \) -print0 | xargs -0 jpegoptim --strip-all
+          find img -type f -name '*.png' -print0 | xargs -0 optipng -o2 -silent
+
+      - name: Open optimization PR if anything shrank
+        uses: peter-evans/create-pull-request@v6
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          jpegQuality: 85
-          pngQuality: 85
+          commit-message: "imgbot: optimisation sans perte des images"
+          title: "imgbot — images optimisées (sans perte)"
+          body: |
+            Optimisation lossless automatique (jpegoptim --strip-all / optipng) :
+            métadonnées retirées, tables Huffman réoptimisées — **pixels identiques**,
+            poids réduit. Vérifie une vignette au hasard avant de merger.
+          branch: imgbot-optimizations
+          delete-branch: true
